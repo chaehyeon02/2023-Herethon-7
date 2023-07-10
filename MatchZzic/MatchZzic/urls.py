@@ -22,7 +22,7 @@ import match
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('account/', include(account.views)),
-    path('main/',include(main.views)),
-    path('match/',include(match.views)),
+    path('account/', include(account.urls)),
+    path('main/',include(main.urls)),
+    path('match/',include(match.urls)),
 ]
