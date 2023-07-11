@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/MatchZzic/account/templates/mypage.css" />
+  </head>
+  <body>
+    <!-- 상단 로고  -->
+    <div class="header">
+      <div class="logo">MatchZzic</div>
+      <div class="mypage_move">
+        <a href="/MatchZzic/account/templates/mypage.html">
+          <iconify-icon
+            icon="octicon:feed-person-16"
+            style="color: #5e77fe"
+          ></iconify-icon
+        ></a>
+      </div>
+    </div>
+
+    <!-- 마이페이지 타이틀 -->
+    <div class="mypage_title">
+      <img src="/MatchZzic/match/templates/img/Mask group.png" alt="" />
+      <span>마이페이지</span>
+    </div>
+    <!-- 마이페이지 유저 -->
+
+    <div class="mypage_box">
+      <div class="mypage_user">
+        <div class="mypage_user_name">닉네임</div>
+        <button class="mypage_user_photo_change_btn">사진바꾸기</button>
+        <div class="mypage_user_photo">
+          <img
+            src="/MatchZzic/match/templates/img/쉼표머리 - 노랑.png"
+            alt=""
+          />
+        </div>
+        <div class="mypage_user_type">
+          <ul>
+            <li id="one" onclick="change1()">계획형</li>
+            <li id="two" onclick="change2()">사진 찍는 거 싫어요</li>
+            <li id="three" onclick="change3()">오직 휴식을 위한 여행</li>
+            <li id="four" onclick="change4()">자연, 시골</li>
+          </ul>
+        </div>
+        <input type="submit" value="수정하기" />
+      </div>
+
+      <div class="mypage_recent">
+        <div class="text">최근 매칭된 동행자</div>
+        <div class="mypage_recent_list">
+          <ul>
+            <li>
+              <img
+                src="/MatchZzic/match/templates/img/밍밍이 검정머리.png"
+                alt=""
+              />
+              <span>밍밍이</span>
+            </li>
+            <li>
+              <img
+                src="/MatchZzic/match/templates/img/노란머리.png"
+                alt=""
+              /><span>사라</span>
+            </li>
+
+            <li>
+              <img
+                src="/MatchZzic/match/templates/img/초록머리.png"
+                alt=""
+              /><span>뇽뇽</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      function change1() {
+        const subs = document.getElementById("one");
+        if (subs.innerText === "계획형") {
+          subs.innerText = "즉흥형";
+        } else {
+          subs.innerText = "계획형";
+        }
+      }
+      function change2() {
+        const subs = document.getElementById("two");
+        if (subs.innerText === "사진 찍는 거 싫어요") {
+          subs.innerText = "사진 찍는 거 좋아요";
+        } else {
+          subs.innerText = "사진 찍는 거 싫어요";
+        }
+      }
+      function change3() {
+        const subs = document.getElementById("three");
+        if (subs.innerText === "바쁘게 움직이는 여행") {
+          subs.innerText = "오직 휴식을 위한 여행";
+        } else {
+          subs.innerText = "바쁘게 움직이는 여행";
+        }
+      }
+      function change4() {
+        const subs = document.getElementById("four");
+        if (subs.innerText === "자연, 시골") {
+          subs.innerText = "번화가";
+        } else {
+          subs.innerText = "자연, 시골";
+        }
+      }
+    </script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  </body>
+</html>
