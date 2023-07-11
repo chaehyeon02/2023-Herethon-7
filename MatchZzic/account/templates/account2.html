@@ -1,0 +1,40 @@
+<h2>3. 여행 성향 타입</h2>
+<form method="POST" action="{% url 'signup2' %}">
+    {% csrf_token %}
+
+    <div>
+      <label for="id_userType1">User Type 1:</label>
+      <select id="id_userType1" name="userType1" required>
+        <option value="option1">계획형</option>
+        <option value="option2">즉흥형</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="id_userType2">User Type 2:</label>
+      <select id="id_userType2" name="userType2" required>
+        <option value="option3">바쁘게 움직이는 여행</option>
+        <option value="option4">오직 휴식을 위한 여행</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="id_userType3">User Type 3:</label>
+      <select id="id_userType3" name="userType3" required>
+        <option value="option5">사진 찍는 거 좋아요</option>
+        <option value="option6">사진 찍는 거 싫어요</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="id_userType4">User Type 4:</label>
+      <select id="id_userType4" name="userType4" required>
+        <option value="option7">번화가</option>
+        <option value="option8">자연, 시골</option>
+      </select>
+    </div>
+  
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+</form>
