@@ -14,7 +14,7 @@ def signup(request):
             return redirect('signup2')
     else:
         form = TempUserForm()
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'signup_popup.html', {'form': form})
 
 def signup2(request):
     temp_user = TempUser.objects.last()
@@ -45,7 +45,7 @@ def signup2(request):
             'userRrn2': temp_user.userRrn2,
             'userLink': temp_user.userLink
         })
-    return render(request, 'selectType.html', {'user_form': user_form})
+    return render(request, 'selectType_popup.html', {'user_form': user_form})
 
 
 def login(request):
