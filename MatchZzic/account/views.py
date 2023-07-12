@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import User, TempUser
 from .forms import UserForm, TempUserForm
+from django.contrib.auth.decorators import login_required
 
 
 def first(request):
@@ -75,3 +76,21 @@ def login(request):
 
 def home(request):
     return render(request, 'main.html')
+
+@login_required
+def mypage(request):
+    user_instance = request.user
+    
+    context = {
+        'user_instance': user_instance
+    }
+
+    if request.method == 'POST':
+        form = UserForm(request.POST, request.FILES, instance=user_instance)
+        if form.is_valid():
+            form.save()
+            return render(request, 'mypage.html', context)
+    else:
+        form = UserForm(instance=user_instance)
+    
+    return render(request, 'mypage.html', {'form': form})
