@@ -4,7 +4,7 @@ from .forms import UserForm, TempUserForm
 
 
 def first(request):
-    return render(request, 'first.html')
+    return render(request, 'start.html')
 
 def signup(request):
     if request.method == "POST":
@@ -14,7 +14,7 @@ def signup(request):
             return redirect('signup2')
     else:
         form = TempUserForm()
-    return render(request, 'account.html', {'form': form})
+    return render(request, 'signup.html', {'form': form})
 
 def signup2(request):
     temp_user = TempUser.objects.last()
@@ -45,7 +45,7 @@ def signup2(request):
             'userRrn2': temp_user.userRrn2,
             'userLink': temp_user.userLink
         })
-    return render(request, 'account2.html', {'user_form': user_form})
+    return render(request, 'selectType.html', {'user_form': user_form})
 
 
 def login(request):
@@ -74,4 +74,4 @@ def login(request):
         return render(request, 'login.html',response_data)
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'main.html')
