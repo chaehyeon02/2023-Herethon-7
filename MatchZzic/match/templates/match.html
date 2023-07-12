@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,7 +12,7 @@
     <div class="header">
       <div class="logo">MatchZzic</div>
       <div class="mypage_move">
-        <a href="/MatchZzic/account/templates/mypage.html">
+        <a href="{% url 'mypage' %}">
           <iconify-icon
             icon="octicon:feed-person-16"
             style="color: #5e77fe"
@@ -49,18 +50,15 @@
       <div class="no">
         <span>no!</span>
         <div class="noimg">
-          <img src="/MatchZzic/match/templates/img/Mask group2.png" alt="" />
+          <img src="{% static 'image/Mask group2.png' %}" alt="" />
         </div>
       </div>
-
       <div class="ok">
         <span>ok!</span>
         <a href="/MatchZzic/match/templates/match_done.html">
+          {% comment %} url연결 필요 {% endcomment %}
           <div class="okimg">
-            <img
-              src="/MatchZzic/match/templates/img/Mask group.png"
-              alt=""
-            /></div
+            <img src="{% static 'image/Mask group4.png' %}" alt="" /></div
         ></a>
       </div>
     </div>
