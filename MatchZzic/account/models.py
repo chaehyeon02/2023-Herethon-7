@@ -30,6 +30,8 @@ class User(models.Model):
     userType2 = models.CharField(max_length=15, choices=CHOICE_OPTIONS2, default='option3')
     userType3 = models.CharField(max_length=15, choices=CHOICE_OPTIONS3, default='option5')
     userType4 = models.CharField(max_length=15, choices=CHOICE_OPTIONS4, default='option7')
+    
+    image = models.ImageField(upload_to='images/', null=True, default='images/default_image.png')
 
     class Meta:
         db_table = 'user'
