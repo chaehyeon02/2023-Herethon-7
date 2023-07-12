@@ -22,6 +22,18 @@ body {
   line-height: 28px;
   color: rgba(26, 61, 255, 0.7);
 }
+
+.username {
+  position: absolute;
+  left: 80%;
+  top: 33px;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(114, 114, 114, 1);
+}
 .mypage_move {
   position: absolute;
   left: 92%;
