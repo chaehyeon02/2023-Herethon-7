@@ -1,0 +1,165 @@
+body {
+  width: 375px;
+  height: 667px;
+  background: #fbfbfb;
+}
+
+/* 상단로고 */
+.header {
+  display: flex;
+}
+.logo {
+  position: absolute;
+  left: 8.27%;
+  right: 59.47%;
+  top: 4.5%;
+  bottom: 91.3%;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 22.799px;
+  line-height: 28px;
+  color: rgba(26, 61, 255, 0.7);
+}
+.mypage_move {
+  position: absolute;
+  left: 92%;
+  top: 33px;
+}
+iconify-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* 메인페이지 */
+
+.main_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main_title img {
+  position: absolute;
+  width: 11.53px;
+  left: calc(50% - 11.53px / 2 + 1.5px);
+  top: 13%;
+  bottom: 85.16%;
+}
+.main_title .title {
+  position: absolute;
+  width: 138px;
+  height: 29px;
+  left: calc(50% - 138px / 2 + 0.5px);
+  top: 108px;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+  color: #000000;
+}
+.main_title .title2 {
+  /* 비슷한 타입의 사람과 여행가고 싶어요 */
+  position: absolute;
+  width: 114px;
+  height: 30px;
+  left: calc(50% - 114px / 2 + 0.5px);
+  top: 151px;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+  color: #909090;
+}
+
+/* 메인페이지 여행가방 사진 */
+.main_img {
+  position: absolute;
+  width: 211px;
+  height: 198px;
+  left: calc(50% - 220px / 2 + 0.5px);
+  top: 214px;
+  background: #1a3dff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.main_img img {
+  position: absolute;
+  width: 190px;
+  height: 180px;
+  left: calc(50% - 190px / 2 + 0.5px);
+  top: 15px;
+}
+
+/* 동행할 여행지 입력란 */
+.main_input {
+  display: flex;
+  box-sizing: border-box;
+  width: 279px;
+  border-bottom: 0.833935px solid #dcdcdc;
+  position: absolute;
+  left: calc(50% - 72px / 2 - 90.99px);
+  top: 452px;
+  padding: 15px;
+}
+.main_input span {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12.509px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.main_input input {
+  position: absolute;
+  width: 135px;
+  height: 24px;
+  left: 130px;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+  color: rgba(57, 57, 57, 0.4);
+
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+}
+
+.main_input input:focus {
+  background: #ffffff;
+  box-shadow: 0px 0px 4px #1a3dff;
+  color: rgba(26, 61, 255, 0.64);
+  border: none;
+  outline: none;
+}
+
+input[type="submit"] {
+  position: absolute;
+  width: 217px;
+  height: 46px;
+  left: calc(50% - 217px / 2);
+  top: 543px;
+
+  background: #5e77fe;
+  border-radius: 15px;
+  border: none;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  text-align: center;
+  color: #ffffff;
+}
