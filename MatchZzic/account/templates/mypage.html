@@ -1,17 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/MatchZzic/account/templates/mypage.css" />
+    <link rel="stylesheet" href="{% static 'css/mapage2.css' %}" />
   </head>
   <body>
     <!-- 상단 로고  -->
     <div class="header">
       <div class="logo">MatchZzic</div>
+      <div class="username">김멋사</div>
       <div class="mypage_move">
-        <a href="/MatchZzic/account/templates/mypage.html">
+        <a href="{% url 'mypage' %}">
           <iconify-icon
             icon="octicon:feed-person-16"
             style="color: #5e77fe"
@@ -22,18 +24,27 @@
 
     <!-- 마이페이지 타이틀 -->
     <div class="mypage_title">
-      <img src="/MatchZzic/match/templates/img/Mask group.png" alt="" />
+      <img src="{% static 'image/maskgroup4.png' %}" alt="" />
       <span>마이페이지</span>
     </div>
     <!-- 마이페이지 유저 -->
 
     <div class="mypage_box">
       <div class="mypage_user">
-        <div class="mypage_user_name">닉네임</div>
-        <button class="mypage_user_photo_change_btn">사진바꾸기</button>
+        <div class="mypage_user_name">{{userName}}</div>
+        <input type="file" id="fileInput" style="display: none" />
+        <label
+          for="fileInput"
+          class="mypage_user_photo_change_btn_label"
+          id="input-image"
+        >
+          사진 바꾸기
+        </label>
+
         <div class="mypage_user_photo">
           <img
-            src="/MatchZzic/match/templates/img/쉼표머리 - 노랑.png"
+            id="preview-image"
+            src="{% static 'image/쉼표머리 - 노랑2.png' %}"
             alt=""
           />
         </div>
@@ -53,29 +64,26 @@
         <div class="mypage_recent_list">
           <ul>
             <li>
-              <img
-                src="/MatchZzic/match/templates/img/밍밍이 검정머리.png"
-                alt=""
-              />
+              <img src="{% static 'image/밍밍이 검정머리2.png' %}" alt="" />
               <span>밍밍이</span>
             </li>
             <li>
-              <img
-                src="/MatchZzic/match/templates/img/노란머리.png"
-                alt=""
-              /><span>사라</span>
+              <img src="{% static 'image/노란머리2.png' %}" alt="" /><span
+                >사라</span
+              >
             </li>
 
             <li>
-              <img
-                src="/MatchZzic/match/templates/img/초록머리.png"
-                alt=""
-              /><span>뇽뇽</span>
+              <img src="{% static 'image/초록머리2.png' %}" alt="" /><span
+                >뇽뇽</span
+              >
             </li>
           </ul>
         </div>
       </div>
     </div>
+
+    {% comment %} 누르면 텍스트 변환 {% endcomment %}
     <script>
       function change1() {
         const subs = document.getElementById("one");
@@ -109,6 +117,30 @@
           subs.innerText = "자연, 시골";
         }
       }
+    </script>
+    {% comment %} 사진 바꾸기 {% endcomment %}
+    <script>
+      function readImage(input) {
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const previewImage = document.getElementById("preview-image");
+            previewImage.src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+
+      const inputImage = document.getElementById("input-image");
+      inputImage.addEventListener("click", () => {
+        const fileInput = document.getElementById("fileInput");
+        fileInput.click();
+      });
+
+      const fileInput = document.getElementById("fileInput");
+      fileInput.addEventListener("change", (e) => {
+        readImage(e.target);
+      });
     </script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   </body>

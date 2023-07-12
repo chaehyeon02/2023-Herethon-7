@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,8 +11,9 @@
     <!-- 상단 로고  -->
     <div class="header">
       <div class="logo">MatchZzic</div>
+      <div class="username">김멋사</div>
       <div class="mypage_move">
-        <a href="/MatchZzic/account/templates/mypage.html">
+        <a href="{% url 'mypage' %}">
           <iconify-icon
             icon="octicon:feed-person-16"
             style="color: #5e77fe"
@@ -21,13 +23,15 @@
     </div>
     <div class="text">동행이&nbsp; <span>매칭</span>되었습니다</div>
     <div class="text_place">동행할 여행지 --</div>
+    {% comment %} 여행지 받아서 담아야 함 {% endcomment %}
     <div class="matching_user">
       <div class="username">
         <img src="/MatchZzic/match/templates/img/Mask group.png" alt="" />
         <span>김멋사</span>
-        <!--변수로 담아야 함-->
+        {% comment %} 이름 변수로 받아야 함 {% endcomment %}
       </div>
       <div class="usertype">
+        {% comment %} usertype받아야 함 {% endcomment %}
         <ul>
           <li>계획형</li>
           <li>사진 찍는 거 싫어요</li>
@@ -40,10 +44,11 @@
       아래 버튼을 클릭하여<br />
       동행자와 채팅해보세요<br />
       <span>*버튼을 클릭하면 오픈채팅으로 넘어갑니다.</span>
+      {% comment %} 오픈채팅으로 넘어가는 링크 삽입 {% endcomment %}
     </div>
     <div class="click">
       <div class="click_img">
-        <img src="/MatchZzic/match/templates/img/Mask group.png" alt="" />
+        <img src="{% static 'image/Mask group4.png' %}" alt="" />
       </div>
       <span>click!</span>
     </div>

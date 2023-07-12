@@ -1,17 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/MatchZzic/main/templates/main.css" />
+    <link rel="stylesheet" href="{% static 'css/main2.css' %}" />
   </head>
   <body>
     <!-- 상단 로고  -->
     <div class="header">
       <div class="logo">MatchZzic</div>
+      <div class="username">김멋사</div>
       <div class="mypage_move">
-        <a href="/MatchZzic/account/templates/mypage.html">
+        <a href="{% url 'mypage' %}">
           <iconify-icon
             icon="octicon:feed-person-16"
             style="color: #5e77fe"
@@ -29,7 +31,7 @@
 
     <!-- 메인 페이지 여행가방 사진 -->
     <div class="main_img">
-      <img src="/MatchZzic/main/templates/여행 아이콘2.png" alt="" />
+      <img src="{% static 'image/여행 아이콘3.png' %}" alt="" />
     </div>
 
     <!-- 동행할 여행지 입력란 -->

@@ -1,0 +1,208 @@
+body {
+  width: 375px;
+  height: 667px;
+  background: #fbfbfb;
+}
+
+/* 상단로고 */
+.header {
+  display: flex;
+}
+.logo {
+  position: absolute;
+  left: 8.27%;
+  right: 59.47%;
+  top: 4.5%;
+  bottom: 91.3%;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 22.799px;
+  line-height: 28px;
+  color: rgba(26, 61, 255, 0.7);
+}
+.username {
+  position: absolute;
+  left: 80%;
+  top: 33px;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(114, 114, 114, 1);
+}
+.mypage_move {
+  position: absolute;
+  left: 92%;
+  top: 33px;
+}
+iconify-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* 매칭 */
+
+.matching {
+  display: flex;
+}
+
+.outline {
+  position: absolute;
+  width: 322px;
+  height: 405px;
+  left: calc(50% - 322px / 2 + 0.5px);
+  top: 108px;
+
+  background: #ffffff;
+  box-shadow: 0px 0px 5px rgba(137, 137, 137, 0.3);
+  border-radius: 18px;
+}
+/* 번개로고 */
+.username img {
+  width: 11.53px;
+  height: 13.97px;
+  position: absolute;
+  left: 37.33%;
+  right: 57.46%;
+  top: 9.04%;
+  bottom: 86.82%;
+}
+.username span {
+  position: absolute;
+  width: 47px;
+  height: 25px;
+  left: calc(50% - 47px / 2 + 0.5px);
+  top: 30px;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
+}
+
+.userphoto img {
+  position: absolute;
+  width: 282px;
+  height: 211px;
+  left: calc(50% - 282px / 2);
+  top: 63px;
+}
+
+.usertype {
+  position: absolute;
+  width: 270px;
+  box-sizing: border-box;
+  top: 280px;
+  left: calc(50% - 300px / 2);
+  text-align: center;
+}
+
+.usertype ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  margin: 0;
+}
+
+.usertype li {
+  height: max-content;
+  width: max-content;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  margin: 4px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #1a3dff;
+  border-radius: 20px;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 17px;
+  list-style: none;
+  color: #1a3dff;
+}
+
+/* 수락 거절 */
+
+.okno {
+}
+
+.no {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: absolute;
+  top: 534px;
+  left: calc(50% - 69px / 2 - 54px);
+}
+.no span {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  color: #989898;
+
+  padding: 10px;
+}
+.noimg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 69px;
+  height: 69px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+.noimg img,
+.okimg img {
+  width: 40.76px;
+  height: 40.76px;
+}
+
+.ok {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 534px;
+  left: calc(50% - 69px / 2 + 54px);
+}
+.ok span {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  color: #1a3dff;
+
+  padding: 10px;
+}
+.okimg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 69px;
+  height: 69px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
