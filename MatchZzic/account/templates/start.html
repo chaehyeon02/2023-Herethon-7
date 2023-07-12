@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -70,10 +71,7 @@
   <body>
     <div id="iphone-frame">
       <div>
-        <img
-          class="main-logo"
-          src="/MatchZzic/account/templates/image/main.png"
-        />
+        <img class="main-logo" src="{% static 'image/main.png' %}" alt="Logo" />
       </div>
       <div>
         <a href="{% url 'signup' %}">
