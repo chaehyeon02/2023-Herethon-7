@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+
+        #iphone-frame {
+        width: 375px;
+        height: 667px;
+        background: linear-gradient(to bottom, #2547FD, #2547FD, #f2f2f2);
+        /* border-radius: 30px; */
+        margin: 50px auto;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        }
+
+        /* 시연 영상때 사용할 아이폰 프레임 입니다. */
+        /* #iphone-frame:before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 692px;
+            background-color: #000;
+            border-radius: 30px;
+            z-index: -1;
+        } */
+
+        .main-logo {
+        width: 180px;
+        height: 281px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .start-button{
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 170px;
+        height: 45px;
+        border-radius: 50px;
+        border: none;
+        border-color: #ffffff;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .login-link {
+        position: absolute;
+        top: 87%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 10px;
+        color: #575757;
+        text-decoration: none;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="iphone-frame">
+        <div>
+        <img class="main-logo" src="image/main.png">
+        </div>
+        <div>
+            <a href="file:///C:/Users/82103/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/matchzzic/signup.html">
+            <button class="start-button"><b style="color: #2547FD; font-size: 20px;">시작하기</b></button>
+            </a>
+            <a class="login-link" href="file:///C:/Users/82103/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/matchzzic/login.html"><b>기존 아이디로 로그인하기</b></a>
+        </div>
+    </div>
+</body>
+</html>
+
