@@ -100,12 +100,14 @@
         <div>
             <img class="login-icon" src="image/login-icon.png">
         </div>
-        <div class="login-form">
-            <input type="text" placeholder="아이디">
-            <input type="password" placeholder="비밀번호">
-            <button>확인</button>
-        </div>
-
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="login-form">
+                <input type="text" placeholder="아이디" name="userId">
+                <input type="password" placeholder="비밀번호" name="userPwd">
+                <button type="submit">확인</button>
+            </div>
+        </form>
 
         <div>
             <a class="login-link1" href="#">아이디 찾기</a>
