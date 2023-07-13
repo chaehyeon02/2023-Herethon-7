@@ -6,12 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/mypage2.css' %}" />
+    <style>
+      /* 사진바꾸기 버튼 */
+      #input-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 63.55px;
+        height: 24.87px;
+        left: 233.03px;
+        top: 20.26px;
+        background: #efefef;
+        border-radius: 16.5789px;
+        border: none;
+        font-family: "Noto Sans";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 9.21053px;
+        line-height: 13px;
+        color: #727272;
+      }
+    </style>
   </head>
   <body>
     <!-- 상단 로고  -->
     <div class="header">
       <div class="logo">MatchZzic</div>
-      <div class="username">김멋사</div>
+      <div class="username">{{ user_instance.username }}</div>
       <div class="mypage_move">
         <a href="{% url 'mypage' %}">
           <iconify-icon
@@ -24,14 +46,17 @@
 
     <!-- 마이페이지 타이틀 -->
     <div class="mypage_title">
-      <img src="{% static 'image/maskgroup4.png' %}" alt="" />
+      <img src="{% static 'image/Mask group4.png' %}" alt="" />
       <span>마이페이지</span>
     </div>
     <!-- 마이페이지 유저 -->
 
+
+    {% block content %}
     <div class="mypage_box">
       <div class="mypage_user">
-        <div class="mypage_user_name">{{userName}}</div>
+        <div class="mypage_user_name">{{ user_instance.username }}</div>
+    {% endblock %}
         <input type="file" id="fileInput" style="display: none" />
         <label
           for="fileInput"
@@ -47,17 +72,22 @@
             src="{% static 'image/쉼표머리 - 노랑2.png' %}"
             alt=""
           />
-        </div>
+        </div> 
+    <form method="POST" action="{% url 'mypage' %}">
+        {% csrf_token %}
         <div class="mypage_user_type">
           <ul>
-            <li id="one" onclick="change1()">계획형</li>
-            <li id="two" onclick="change2()">사진 찍는 거 싫어요</li>
-            <li id="three" onclick="change3()">오직 휴식을 위한 여행</li>
-            <li id="four" onclick="change4()">자연, 시골</li>
+            <li id="one" onclick="change1()">{{userType1}}계획형</li>
+            <li id="two" onclick="change2()">{{userType2}}사진 찍는 거 싫어요</li>
+            <li id="three" onclick="change3()">{{userType3}}오직 휴식을 위한 여행</li>
+            <li id="four" onclick="change4()">{{userType4}}자연, 시골</li>
           </ul>
         </div>
         <input type="submit" value="수정하기" />
       </div>
+    </form>
+
+    
 
       <div class="mypage_recent">
         <div class="text">최근 매칭된 동행자</div>
