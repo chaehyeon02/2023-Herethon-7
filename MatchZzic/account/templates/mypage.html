@@ -32,8 +32,8 @@
   <body>
     <!-- 상단 로고  -->
     <div class="header">
-      <div class="logo">MatchZzic</div>
-      <div class="username">{{ user_instance.username }}</div>
+      <div class="logo">MatchZzic</div> 
+      <div class="username">{{user_instance.userName}}</div>
       <div class="mypage_move">
         <a href="{% url 'mypage' %}">
           <iconify-icon
@@ -51,12 +51,10 @@
     </div>
     <!-- 마이페이지 유저 -->
 
-
-    {% block content %}
     <div class="mypage_box">
       <div class="mypage_user">
-        <div class="mypage_user_name">{{ user_instance.username }}</div>
-    {% endblock %}
+        <div class="mypage_user_name">{{user_instance.userName}}</div>
+
         <input type="file" id="fileInput" style="display: none" />
         <label
           for="fileInput"
@@ -72,22 +70,27 @@
             src="{% static 'image/쉼표머리 - 노랑2.png' %}"
             alt=""
           />
-        </div> 
-    <form method="POST" action="{% url 'mypage' %}">
-        {% csrf_token %}
-        <div class="mypage_user_type">
+        </div>
+
+    <form method="post">
+          {% csrf_token %}
+          {{ user_form.as_p }}
+          <div class="mypage_user_type">
           <ul>
-            <li id="one" onclick="change1()">{{userType1}}계획형</li>
-            <li id="two" onclick="change2()">{{userType2}}사진 찍는 거 싫어요</li>
-            <li id="three" onclick="change3()">{{userType3}}오직 휴식을 위한 여행</li>
-            <li id="four" onclick="change4()">{{userType4}}자연, 시골</li>
+            <li id="one" onclick="change1()">{{user_form.userType1}}</li>
+            <li id="two" onclick="change2()">
+              {{user_form.userType2}}사진 찍는 거 싫어요 
+            </li>
+            <li id="three" onclick="change3()">
+              {{user_form.userType3}}오직 휴식을 위한 여행
+            </li>
+            <li id="four" onclick="change4()">{{user_form.userType4}}자연, 시골</li>
           </ul>
         </div>
         <input type="submit" value="수정하기" />
       </div>
-    </form>
 
-    
+    </form>
 
       <div class="mypage_recent">
         <div class="text">최근 매칭된 동행자</div>
