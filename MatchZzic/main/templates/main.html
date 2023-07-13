@@ -37,11 +37,14 @@
     <!-- 동행할 여행지 입력란 -->
     <div class="main_input">
       <span> 동행할 여행지</span>
-      <input type="text" placeholder="여행지를 입력해주세요" />
+      <input type="text" placeholder="여행지를 입력해주세요" name="placeName"/>
     </div>
 
     <!-- 지금동행찾기 버튼 -->
+    <form method="POST" action="{% url 'main' %}">
+      {% csrf_token %}
     <input type="submit" value="지금 동행 찾기" />
+    </form>
 
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   </body>
