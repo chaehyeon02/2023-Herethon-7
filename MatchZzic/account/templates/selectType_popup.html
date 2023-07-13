@@ -305,48 +305,78 @@
                 <button class="finish-button"><b style="font-size: 20px;">완료하기</b></button>
                 </a>
         </div>
-                    <!-- 모달 창 -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <img class="header-logo" src="image/travel-popup.png">
-        <br><br><br>
-        <p>당신의 여행 타입을<br>
-        모두 선택해주세요!</p>
-        <button class="close-button" style="font-weight: bold;">확인</button>
-    </div>
-
+        <!-- 모달 창 -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <img class="header-logo" src="image/travel-popup.png">
+                 <br><br><br>
+                 <p>당신의 여행 타입을<br>모두 선택해주세요!</p>
+                 <button class="close-button" style="font-weight: bold;">확인</button>
+                </div>
+        </div>
 </div>
 
         </div>
     </div>
+<script>
+    // 버튼 클릭 시 색상 변경
+    function changeButtonColor(button) {
+    var buttonGroup1 = [document.querySelector('.button1'), document.querySelector('.button2')];
+    var buttonGroup2 = [document.querySelector('.button3'), document.querySelector('.button4')];
+    var buttonGroup3 = [document.querySelector('.button5'), document.querySelector('.button6')];
+    var buttonGroup4 = [document.querySelector('.button7'), document.querySelector('.button8')];
 
-    <script>
-        function changeButtonColor(button) {
-            button.style.backgroundColor = "#1A3DFF";
-            button.style.color = "#FFFFFF";
-        }
+    if (buttonGroup1.includes(button) || buttonGroup2.includes(button) || buttonGroup3.includes(button) || buttonGroup4.includes(button)) {
+        button.classList.toggle('selected'); // 선택된 버튼의 상태를 토글
+    }
 
+    var selectedButtons1 = buttonGroup1.filter(function(btn) { return btn.classList.contains('selected'); });
+    var selectedButtons2 = buttonGroup2.filter(function(btn) { return btn.classList.contains('selected'); });
+    var selectedButtons3 = buttonGroup3.filter(function(btn) { return btn.classList.contains('selected'); });
+    var selectedButtons4 = buttonGroup4.filter(function(btn) { return btn.classList.contains('selected'); });
 
-<!-- JavaScript 모달 창 표시 -->
+    // 각 버튼 그룹 중 최소한 하나의 버튼이 선택된 경우에만 모달 표시
+    if (selectedButtons1.length > 0 && selectedButtons2.length > 0 && selectedButtons3.length > 0 && selectedButtons4.length > 0) {
+        window.location.href = "{% url 'login' %}";
+    }
+    }
+
+    
+    // JavaScript 모달 창 표시
     var modal = document.getElementById("myModal");
     var closeButton = document.getElementsByClassName("close-button")[0];
-
+    
     // 모달 창 표시
     function showModal() {
-        modal.style.display = "block";
+      modal.style.display = "block";
     }
-
+    
     // 모달 창 닫기
     function closeModal() {
-        modal.style.display = "none";
+      modal.style.display = "none";
     }
-
+    
     // 닫기 버튼 클릭 이벤트 처리
     closeButton.onclick = closeModal;
-
+    
     // 페이지 로드 후 모달 창 표시
-    window.onload = showModal;
-
-    </script>
+    window.onload = function() {
+    var finishButton = document.querySelector('.finish-button');
+    finishButton.onclick = function() {
+    var selectedButtons1 = document.querySelectorAll('.button1.selected, .button2.selected');
+    var selectedButtons2 = document.querySelectorAll('.button3.selected, .button4.selected');
+    var selectedButtons3 = document.querySelectorAll('.button5.selected, .button6.selected');
+    var selectedButtons4 = document.querySelectorAll('.button7.selected, .button8.selected');
+    
+    // 각 버튼 묶음 중 최소한 하나의 버튼이 선택되지 않은 경우에만 모달 표시
+        if (selectedButtons1.length === 0 || selectedButtons2.length === 0 || selectedButtons3.length === 0 || selectedButtons4.length === 0) {
+        showModal();
+        return false;
+        } else {
+        window.location.href = "{% url 'login' %}";
+        }
+      };
+    };
+</script>    
 </body>
 </html>

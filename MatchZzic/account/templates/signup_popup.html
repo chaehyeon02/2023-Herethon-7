@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -137,7 +138,7 @@
             position: fixed;
             z-index: 1;
             left: 580px;
-            top: 51px;
+            top: 22px;
             width: 375px;
             height: 667px;
             overflow: auto;
@@ -183,8 +184,7 @@
 <body>
     <div id="iphone-frame">
         <div>
-            {% load static %}
-            <img class="header-logo" src="{% static './MatchZzic/image/header-logo.png' %}">
+            <img class="header-logo" src="{% static 'image/header-logo2.png' %}">
         </div>
 
         <div class="title">회원가입</div>
@@ -210,9 +210,8 @@
           
           
         <div>
-        <a href="file:///C:/Users/82103/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/matchzzic/selectType.html">
-            <button class="start-button"><b style="color: #ffffff; font-size: 15px;">다음</b></button>
-        </a>
+            <button  class="start-button"><b style="color: #ffffff; font-size: 15px;">다음</b></button>
+            </a>
         </div>
     </div>
 
@@ -221,16 +220,14 @@
 <div id="myModal" class="modal">
     <div class="modal-content">
         {% load static %}
-        <img class="main-logo" src="{% static 'MatchZzic/image/signup-popup.png' %}">
+        <img class="main-logo" src="{% static 'image/signup-popup2.png' %}">
         <br><br><br>
         <p>MatchZzic은<br>
         여성전용 서비스입니다</p>
-        
-        <button class="close-button" style="font-weight: bold;">확인</button>
+        <button class="close-button" style="font-weight: bold; ">확인</button>
     </div>
 </div>
 
-<!-- JavaScript 모달 창 표시 -->
 <script>
     var modal = document.getElementById("myModal");
     var closeButton = document.getElementsByClassName("close-button")[0];
@@ -259,8 +256,11 @@
         if (value === '9' || value === '1' || value === '3' || value === '5' || value === '7') {
             showModal();
             return false; // 링크 이동 방지
-        }
-    };
+        }else {
+        // 다른 수가 입력되었을 때 링크로 연결
+        window.location.href = "{% url 'signup2' %}"; 
+    }
+};
 </script>
 
 </body>
