@@ -286,7 +286,7 @@
 <body>
     <div id="iphone-frame">
         <div id="container-box">
-            <img class="main-logo" src="image/header-logo.png">
+            <img class="main-logo" src="{% static 'image/header-logo2.png' %}">
             <div class="title">회원가입</div>
             <div class="shadowed-box">
                 <div class="type" >당신의 여행 타입을 클릭해주세요</div>
@@ -310,7 +310,7 @@
             <div class="modal-content">
                 <img class="header-logo" src="image/travel-popup.png">
                  <br><br><br>
-                 <p>당신의 여행 타입을<br>모두 선택해주세요!</p>
+                 <p>당신의 여행 타입을 <br>모두 선택해주세요!</p>
                  <button class="close-button" style="font-weight: bold;">확인</button>
                 </div>
         </div>
@@ -340,7 +340,6 @@
         window.location.href = "{% url 'login' %}";
     }
     }
-
     
     // JavaScript 모달 창 표시
     var modal = document.getElementById("myModal");
