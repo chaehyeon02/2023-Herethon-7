@@ -52,7 +52,7 @@ def match(request):
                 'ans2': ans2,
                 'ans3': ans3,
                 'ans4': ans4,
-                'match_user_travel': match_user_travel, })
+                'match_user_travel': match_user_travel[0], })
 
 # match_finish
 def done(request):
