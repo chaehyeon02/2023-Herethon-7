@@ -5,12 +5,10 @@ from .models import User
 @login_required
 def main(request):
     if request.method == 'POST':
-        place = request.POST['place']
-        post = User(travel_to=place, user=request.user)
-        
-        # 동일한 여행지 필터링
-        User.objects.filter(place__exact=request.POST.get('place'))
-        post.save()
+        # 여행지 저장
+        place = request.POST.get('place')
+        user = request.session['user'] # 세션에서 user 가져옴
+        User.objects.filter(userId=user).update(travel_to=place)
         return redirect('match')
     else:
         return render(request, 'main.html')
