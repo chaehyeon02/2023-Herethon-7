@@ -269,7 +269,7 @@
         <div class="outline">
           <div class="username">
             <img src="{% static 'image/Mask group4.png' %}" alt="" />
-            <span>{{ user }}</span>
+            <span>{{ match_user }}</span>
           </div>
           <div class="user_travel">{{ match_user_travel }}</div>
           <div class="userphoto">
@@ -288,11 +288,12 @@
       <!-- 수락, 거절 -->
 
       <div class="okno">
-        <div class="no">
+        <!-- <div class="no">
           <span>no!</span>
           <div class="noimg">
             <img src="{% static 'image/Mask group2.png' %}" alt="" />
           </div>
+<<<<<<< HEAD
         </div>
 
         <form action="{% url 'finish' %}" method="get">
@@ -305,6 +306,27 @@
             <!-- </div> -->
           </div>
         </form>
+=======
+        </div> -->
+        <!-- <div class="ok">
+          <span>ok!</span>
+          <a href="/MatchZzic/match/templates/match_done.html">
+            {% comment %} url연결 필요 {% endcomment %}
+            <div class="okimg">
+              <img src="{% static 'image/Mask group4.png' %}" alt="" /></div
+          ></a>
+        </div> -->
+        <form action="{% url 'match' %}" method="get">
+          {% csrf_token %}
+          <input type="hidden" name="match_user" value="{{ match_user }}">
+          <input type="submit" value="no">
+      </form>
+        <form action="{% url 'finish' %}" method="get">
+          {% csrf_token %}
+          <input type="hidden" name="match_user" value="{{ match_user }}">
+          <input type="submit" value="ok">
+      </form>
+>>>>>>> upstream/main
       </div>
     </div>
     <script>
