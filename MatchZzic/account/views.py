@@ -38,7 +38,7 @@ def signup2(request, temp_user_id):
             user.userType3 = request.POST.get('userType3', '')
             user.userType4 = request.POST.get('userType4', '')
             user.save()
-            login(request)  # temp_user_id를 전달
+            login(request)
             return redirect('login')
     else:
         user_form = UserForm(initial={
@@ -68,7 +68,7 @@ def login(request):
             myuser = User.objects.get(userId=login_username) 
             #db에서 꺼내는 명령. Post로 받아온 username으로 , db의 username을 꺼내온다.
             if (login_password == myuser.userPwd):
-                request.session['user'] = myuser.id
+                request.session['user'] = myuser.userId
                 return redirect('main_app:main')
             else:
                 response_data['error'] = "비밀번호를 틀렸습니다."
