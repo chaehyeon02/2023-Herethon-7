@@ -214,18 +214,17 @@
         <img src="{% static 'image/여행 아이콘3.png' %}" alt="" />
       </div>
 
-      <form method="POST" action="{% url 'main_app:main' %}">
-        {% csrf_token %}
-        <!-- 동행할 여행지 입력란 -->
-        <div class="main_input">
-          <span> 동행할 여행지</span>
-          <input type="text" placeholder="여행지를 입력해주세요" name="place" />
-        </div>
+    <form method="POST" action="{% url 'main_app:main' %}">
+      {% csrf_token %}
+      <!-- 동행할 여행지 입력란 -->
+      <div class="main_input">
+        <span> 동행할 여행지</span>
+        <input type="text" placeholder="여행지를 입력해주세요" name="place"/>
+      </div>
 
-        <!-- 지금동행찾기 버튼 -->
-        <input type="submit" value="지금 동행 찾기" />
-      </form>
-    </div>
+      <!-- 지금동행찾기 버튼 -->
+      <input type="submit" value="지금 동행 찾기" />
+    </form>
 
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   </body>
