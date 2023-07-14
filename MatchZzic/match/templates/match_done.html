@@ -10,13 +10,19 @@
       .username {
         position: absolute;
         left: 80%;
-        top: 33px;
+        top: 10px;
         font-family: "Noto Sans KR";
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
         line-height: 18px;
         color: rgba(114, 114, 114, 1);
+      }
+
+      .username_2 img {
+        position: absolute;
+        width: 11.53px;
+        top: 100%;
       }
     </style>
   </head>
@@ -39,8 +45,8 @@
       <div class="text_place">동행할 여행지 {{ user_travel_to }}</div>
       {% comment %} 여행지 받아서 담아야 함 {% endcomment %}
       <div class="matching_user">
-        <div class="username">
-          <img src="/MatchZzic/match/templates/img/Mask group.png" alt="" />
+        <div class="match_username">
+          <img src="{% static 'image/Mask group4.png' %}" alt="" />
           <span>{{ match_user_name }}</span>
         </div>
         <div class="usertype">
@@ -60,9 +66,10 @@
         {% comment %} 오픈채팅으로 넘어가는 링크 삽입 {% endcomment %}
       </div>
       <div class="click">
-        <div class="click_img">
-          <img src="{% static 'image/Mask group4.png' %}" alt="" />
-        </div>
+        <a href="{{match_user_link}}">
+          <div class="click_img">
+            <img src="{% static 'image/Mask group4.png' %}" alt="" /></div
+        ></a>
         <span>click!</span>
       </div>
     </div>
