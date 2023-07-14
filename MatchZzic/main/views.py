@@ -1,7 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import User
-from .forms import PostForm
 
 @login_required
 def main(request):
@@ -14,8 +13,7 @@ def main(request):
         post.save()
         return redirect('match')
     else:
-        form = PostForm()
-    return render(request, 'main.html', {'form': form})
+        return render(request, 'main.html')
 
 def match(request):
     return render(request, 'match.html')
