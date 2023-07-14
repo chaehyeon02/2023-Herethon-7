@@ -186,33 +186,36 @@
         <div>
             <img class="header-logo" src="{% static 'image/header-logo2.png' %}">
         </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="title">회원가입</div>
+            <div class="box1" style="display: flex; justify-content: center; align-items: center;">
+                <a style="font-weight: bold; text-align: center;">1. 닉네임</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="box-input1" name="userName" style="width:202px; height:30px; border-radius: 8px; border-color:#ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
+            </div>
+            <div class="box2" style="display: flex; justify-content: center; align-items: center;">
+                <a style="font-weight: bold;">2. 아이디</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="box-input2" name="userId" style="width:202px; height:30px; border-radius: 8px; border-color:#ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
+            </div>
+            <div class="box3" style="display: flex; justify-content: center; align-items: center;">
+                <a style="font-weight: bold;">3. 비밀번호</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="box-input3" name="userPwd" style="width:202px; height:30px; border-radius: 8px; border-color:#ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
+            </div>
+            <div class="box4"><p style="font-weight: bold;">&nbsp;&nbsp;4. 주민등록번호</p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="box-input4" name="userRrn1" style="width:153px; height:30px; border-radius: 8px; border-color:#ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
+                &nbsp;-&nbsp;<input class="box-input4-1" name="userRrn2" style=" width:30px; height:30px; border-radius: 8px; border-color:#ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
+            </div>
+            <div class="box5"><p style="font-weight: bold;">&nbsp;&nbsp;5. 오픈채팅방 링크</p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="box-input5" name="userLink" style="width: 267px; height: 30px; border-radius: 8px; border-color: #ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
+            </div>
+            
+            
+            <div>
+                <button  class="start-button" onclick="handleButtonClick()"><b style="color: #ffffff; font-size: 15px;">다음</b></button>
+                </a>
+            </div>
+        </form>
 
-        <div class="title">회원가입</div>
-        <div class="box1" style="display: flex; justify-content: center; align-items: center;">
-            <a style="font-weight: bold; text-align: center;">1. 닉네임</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input class="box-input1" style="width:202px; height:30px; border-radius: 8px; border-color:#ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
-        </div>
-        <div class="box2" style="display: flex; justify-content: center; align-items: center;">
-            <a style="font-weight: bold;">2. 아이디</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input class="box-input2" style="width:202px; height:30px; border-radius: 8px; border-color:#ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
-        </div>
-        <div class="box3" style="display: flex; justify-content: center; align-items: center;">
-            <a style="font-weight: bold;">3. 비밀번호</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <input class="box-input3" style="width:202px; height:30px; border-radius: 8px; border-color:#ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
-        </div>
-        <div class="box4"><p style="font-weight: bold;">&nbsp;&nbsp;4. 주민등록번호</p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="box-input4" style="width:153px; height:30px; border-radius: 8px; border-color:#ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
-            &nbsp;-&nbsp;<input class="box-input4-1" style=" width:30px; height:30px; border-radius: 8px; border-color:#ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
-        </div>
-        <div class="box5"><p style="font-weight: bold;">&nbsp;&nbsp;5. 오픈채팅방 링크</p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="box-input5" style="width: 267px; height: 30px; border-radius: 8px; border-color: #ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
-          </div>
-          
-          
-        <div>
-            <button  class="start-button"><b style="color: #ffffff; font-size: 15px;">다음</b></button>
-            </a>
-        </div>
     </div>
 
 
@@ -248,19 +251,20 @@
     // 페이지 로드 후 모달 창 표시
     window.onload != showModal;
 
-    // 다음 버튼 클릭 이벤트 처리
-    var nextButton = document.querySelector('.start-button');
-    nextButton.onclick = function() {
+    <!-- 다음 버튼 클릭 이벤트 처리 -->
+    function handleButtonClick() {
         var boxInput4_1 = document.querySelector('.box-input4-1');
         var value = boxInput4_1.value;
         if (value === '9' || value === '1' || value === '3' || value === '5' || value === '7') {
             showModal();
             return false; // 링크 이동 방지
-        }else {
-        // 다른 수가 입력되었을 때 링크로 연결
-        window.location.href = "{% url 'signup2' %}"; 
+        } else {
+            // 다른 수가 입력되었을 때 링크로 연결
+            var tempUserId = "{{ temp_user.id }}";  // 템플릿 변수를 사용하여 temp_user_id 가져오기
+            var signup2URL = "{% url 'signup2' temp_user_id=0 %}".replace('0', tempUserId);
+            window.location.href = signup2URL;
+        }
     }
-};
 </script>
 
 </body>
