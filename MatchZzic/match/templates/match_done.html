@@ -23,20 +23,20 @@
         </div>
       </div>
       <div class="text">동행이&nbsp; <span>매칭</span>되었습니다</div>
-      <div class="text_place">동행할 여행지 --</div>
+      <div class="text_place">동행할 여행지 {{ user_travel_to }}</div>
       {% comment %} 여행지 받아서 담아야 함 {% endcomment %}
       <div class="matching_user">
         <div class="username">
           <img src="/MatchZzic/match/templates/img/Mask group.png" alt="" />
-          <span>{{user_instance.userName}}</span>
+          <span>{{ match_user_name }}</span>
         </div>
         <div class="usertype">
           {% comment %} usertype받아야 함 {% endcomment %}
           <ul>
-            <li>계획형</li>
-            <li>사진 찍는 거 싫어요</li>
-            <li>바쁘게 움직이는 여행</li>
-            <li>자연, 시골</li>
+            <li>{{ ans1 }}</li>
+            <li>{{ ans2 }}</li>
+            <li>{{ ans3 }}</li>
+            <li>{{ ans4 }}</li>
           </ul>
         </div>
       </div>
