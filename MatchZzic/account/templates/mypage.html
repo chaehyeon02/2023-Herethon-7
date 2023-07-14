@@ -300,7 +300,7 @@ input[type="submit"] {
 
     <div class="mypage_box">
       <div class="mypage_user">
-        <div class="mypage_user_name">{{ userName }}</div>
+        <div class="mypage_user_name">{{user}}</div>
 
         <input type="file" id="fileInput" style="display: none" />
         <label
@@ -324,15 +324,43 @@ input[type="submit"] {
           {{ user_form.as_p }}
           <div class="mypage_user_type">
           <ul>
-            <li id="one" onclick="change1()">{{ ans1 }}</li>
-            <li id="two" onclick="change2()">{{ ans2 }}</li>
-            <li id="three" onclick="change3()">{{ ans3 }}</li>
-            <li id="four" onclick="change4()">{{ ans4 }}</li>
+            <li id="one" onclick="change1()">{{user_form.userType1}}</li>
+            <li id="two" onclick="change2()">
+              {{user_form.userType2}}사진 찍는 거 싫어요 
+            </li>
+            <li id="three" onclick="change3()">
+              {{user_form.userType3}}오직 휴식을 위한 여행
+            </li>
+            <li id="four" onclick="change4()">{{user_form.userType4}}자연, 시골</li>
           </ul>
         </div>
         <input type="submit" value="수정하기" />
       </div>
     </form>
+
+      <div class="mypage_recent">
+        <div class="text">최근 매칭된 동행자</div>
+        <div class="mypage_recent_list">
+          <ul>
+            <li>
+              <img src="{% static 'image/밍밍이 검정머리2.png' %}" alt="" />
+              <span>밍밍이</span>
+            </li>
+            <li>
+              <img src="{% static 'image/노란머리2.png' %}" alt="" /><span
+                >사라</span
+              >
+            </li>
+
+            <li>
+              <img src="{% static 'image/초록머리2.png' %}" alt="" /><span
+                >뇽뇽</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     {% comment %} 누르면 텍스트 변환 {% endcomment %}
   </div>
@@ -347,18 +375,18 @@ input[type="submit"] {
       }
       function change2() {
         const subs = document.getElementById("two");
-        if (subs.innerText === "바쁘게 움직이는 여행") {
-          subs.innerText = "오직 휴식을 위한 여행";
-        } else {
-          subs.innerText = "바쁘게 움직이는 여행";
-        }
-      }
-      function change3() {
-        const subs = document.getElementById("three");
         if (subs.innerText === "사진 찍는 거 싫어요") {
           subs.innerText = "사진 찍는 거 좋아요";
         } else {
           subs.innerText = "사진 찍는 거 싫어요";
+        }
+      }
+      function change3() {
+        const subs = document.getElementById("three");
+        if (subs.innerText === "바쁘게 움직이는 여행") {
+          subs.innerText = "오직 휴식을 위한 여행";
+        } else {
+          subs.innerText = "바쁘게 움직이는 여행";
         }
       }
       function change4() {

@@ -77,30 +77,18 @@ def login(request):
 
 @login_required
 def mypage(request):
-    user_id = request.session['user']
-    user = User.objects.get(userId=user_id)
+    user_instance = request.user
+    
+    context = {
+        'user_instance': user_instance
+    }
 
     if request.method == 'POST':
-        return render(request, 'mypage.html')
-    
+        form = UserForm(request.POST, request.FILES, instance=user_instance)
+        if form.is_valid():
+            form.save()
+            return render(request, 'mypage.html', context)
     else:
-        if user.userType1 == 'option1': ans1 = '계획형'
-        else: ans1 = '즉흥형'
-
-        if user.userType2 == 'option3': ans2 = '바쁘게 움직이는 여행'
-        else: ans2 = '오직 휴식을 위한 여행'
-
-        if user.userType3 == 'option5': ans3 = '사진 찍는 거 좋아요'
-        else: ans3 = '사진 찍는 거 싫어요'
-
-        if user.userType4 == 'option7': ans4 = '번화가'
-        else: ans4 = '자연, 시골'
-
-        contents = {
-        'userName': user, 
-        'ans1': ans1,
-        'ans2': ans2,
-        'ans3': ans3,
-        'ans4': ans4,
-        }
-        return render(request, 'mypage.html', contents)
+        form = UserForm(instance=user_instance)
+    
+    return render(request, 'mypage.html', {'form': form})

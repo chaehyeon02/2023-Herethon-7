@@ -36,16 +36,15 @@
       }
       .username {
         position: absolute;
-  left: 80%;
-  top: 10px;
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
-  color: rgba(114, 114, 114, 1);
+        left: 80%;
+        top: 33px;
+        font-family: "Noto Sans KR";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        color: rgba(114, 114, 114, 1);
       }
-     
       .mypage_move {
         position: absolute;
         top: 2%;
@@ -74,20 +73,20 @@
         border-radius: 18px;
       }
       /* 번개로고 */
-      .match_username {
+      .username {
         position: absolute;
         left: 50%;
         top: 3.5%;
       }
 
-      .match_username img {
+      .username img {
         width: 11.53px;
         height: 13.97px;
         position: absolute;
         left: calc(50% - 75px / 2 + 0.5px);
         top: 3.85%;
       }
-      .match_username span {
+      .username span {
         position: absolute;
         left: calc(50% - 47px / 2 + 0.5px);
         width: max-content;
@@ -160,6 +159,10 @@
       }
 
       /* 수락 거절 */
+
+      .okno {
+      }
+
       .no {
         display: flex;
         flex-direction: column;
@@ -191,6 +194,12 @@
         background: #ffffff;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
       }
+      .noimg img,
+      .okimg img {
+        width: 40.76px;
+        height: 40.76px;
+      }
+
       .ok {
         display: flex;
         flex-direction: column;
@@ -223,32 +232,9 @@
         background-repeat: no-repeat;
         border: none;
         text-align: center;
-        background-size: cover 28.03px 33.97px;
-        background-position: center center;
+        background-size: cover;
         overflow: hidden;
         color: #1a3dff;
-        font-size: 0.1px;
-      }
-
-      .noimg {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 69px;
-        height: 69px;
-        border-radius: 50%;
-        background: #ffffff;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-        background-image: url("{% static 'image/Mask group2.png' %}");
-        background-repeat: no-repeat;
-        border: none;
-        text-align: center;
-        background-size: 28.03px 33.97px;
-        background-position: center center;
-        overflow: hidden;
-        color: #989898;
-        font-size: 0.1px;
       }
       .okimg img {
         width: 60px;
@@ -281,7 +267,7 @@
       <!-- 매칭 -->
       <div class="matching">
         <div class="outline">
-          <div class="match_username">
+          <div class="username">
             <img src="{% static 'image/Mask group4.png' %}" alt="" />
             <span>{{ match_user }}</span>
           </div>
@@ -300,22 +286,47 @@
         </div>
       </div>
       <!-- 수락, 거절 -->
-      <form action="{% url 'match' %}" method="get">
-        {% csrf_token %}
-       <div class="no">
-        <span>no!</span>
-        <input type="hidden" name="match_user" value="{{ match_user }}">
-        <input type="submit" value="no" class="noimg">
-</div>
-    </form>
-      <form action="{% url 'finish' %}" method="get">
-        {% csrf_token %}  
-     <div class="ok">
-      <span>ok!</span>
-        <input type="hidden" name="match_user" value="{{ match_user }}" >
-        <input type="submit" value="ok" class="okimg">
- </div>
-    </form>
+
+      <div class="okno">
+        <!-- <div class="no">
+          <span>no!</span>
+          <div class="noimg">
+            <img src="{% static 'image/Mask group2.png' %}" alt="" />
+          </div>
+<<<<<<< HEAD
+        </div>
+
+        <form action="{% url 'finish' %}" method="get">
+          {% csrf_token %}
+          <div class="ok">
+            <span>ok!</span>
+            <!-- <div class="okimg"> -->
+            <input type="submit" class="okimg" />
+            <input type="hidden" name="match_user" value="{{ match_user }}" />
+            <!-- </div> -->
+          </div>
+        </form>
+=======
+        </div> -->
+        <!-- <div class="ok">
+          <span>ok!</span>
+          <a href="/MatchZzic/match/templates/match_done.html">
+            {% comment %} url연결 필요 {% endcomment %}
+            <div class="okimg">
+              <img src="{% static 'image/Mask group4.png' %}" alt="" /></div
+          ></a>
+        </div> -->
+        <form action="{% url 'match' %}" method="get">
+          {% csrf_token %}
+          <input type="hidden" name="match_user" value="{{ match_user }}">
+          <input type="submit" value="no">
+      </form>
+        <form action="{% url 'finish' %}" method="get">
+          {% csrf_token %}
+          <input type="hidden" name="match_user" value="{{ match_user }}">
+          <input type="submit" value="ok">
+      </form>
+>>>>>>> upstream/main
       </div>
     </div>
     <script>
