@@ -58,7 +58,7 @@
         .next-button {
             position: absolute;
             top: 95%;
-            right: 2%;
+            right: 1%;
             transform: translate(-50%, -50%);
             width: 60px;
             height: 40px;
@@ -90,7 +90,7 @@
             height: 57px;
             background-color: #ffffff;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            transform: translateY(-28%);
+            transform: translateY(-25%);
             border-radius: 15px;
         }
 
@@ -99,25 +99,25 @@
             height: 57px;
             background-color: #ffffff;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            transform: translateY(6%);
+            transform: translateY(13%);
             border-radius: 15px;
         }
 
         .box4 {
             width: 332px;
-            height: 104px;
+            height: 84px;
             background-color: #ffffff;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            transform: translateY(20%);
+            transform: translateY(18%);
             border-radius: 15px;
         }
 
         .box5 {
             width: 332px;
-            height: 104px;
+            height: 84px;
             background-color: #ffffff;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            transform: translateY(40%);
+            transform: translateY(36%);
             border-radius: 15px;
         }
 
@@ -126,7 +126,7 @@
         }
 
         /* 모달 창 스타일 */
-        .modal {
+        .modal1 {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -141,18 +141,49 @@
             background-color: rgba(82, 82, 82, 0.4);
         }
 
-        .modal-content {
-            background-color: #2547FD;
+        .modal2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none; 
+            position: fixed;
+            z-index: 1;
+            left: 580px;
+            top: 51px;
+            width: 375px;
+            height: 667px;
+            overflow: auto;
+            background-color: rgba(82, 82, 82, 0.4);
+        }
+
+        .modal-content1 {
+            background-color:#5D5D5D;
             margin: 15% auto;
             padding: 20px;
             border: 1px solid #888;
             width: 220px;
-            height: 153px;
+            height: 165px;
             border-radius: 24px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             text-align: center;
             transform: translateY(75%);
             font-weight: bold;
+            color: #ffffff;
+        }
+
+        .modal-content2 {
+            background-color:#2547FD;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 220px;
+            height: 165px;
+            border-radius: 24px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transform: translateY(75%);
+            font-weight: bold;
+            color: #ffffff;
         }
 
         .modal-content p {
@@ -161,7 +192,17 @@
             color: #ffffff;
         }
 
-        .close-button {
+        .close-button1 {
+            background-color: #ffffff;
+            color: #5D5D5D;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 11px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .close-button2 {
             background-color: #ffffff;
             color: #2547FD;
             padding: 8px 16px;
@@ -174,6 +215,18 @@
         .close-button:hover {
             background-color: #ffffff;
         }
+
+        .check{
+            border-radius: 30px;
+            border-style: none;
+            background-color: #2547FD;
+            color: #ffffff;
+            width:55px;
+            height:33px;
+            font-weight: bold;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+            
+        }
     </style>
 </head>
 <body>
@@ -181,6 +234,7 @@
         <div>
             <img class="header-logo" src="{% static 'image/header-logo2.png' %}">
         </div>
+        
         <form id="signup-form" method="post">
             {% csrf_token %}
             <div class="title">회원가입</div>
@@ -199,58 +253,92 @@
             <div class="box4"><p style="font-weight: bold;">&nbsp;&nbsp;4. 주민등록번호</p>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="box-input4" name="userRrn1" style="width:153px; height:30px; border-radius: 8px; border-color:#ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
                 &nbsp;-&nbsp;<input class="box-input4-1" name="userRrn2" style=" width:30px; height:30px; border-radius: 8px; border-color:#ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
+                &nbsp;&nbsp;<input type="button" class="check" value="인증" onclick="handleButtonClick()">
             </div>
             <div class="box5"><p style="font-weight: bold;">&nbsp;&nbsp;5. 오픈채팅방 링크</p>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="box-input5" name="userLink" style="width: 267px; height: 30px; border-radius: 8px; border-color: #ffffff; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);">
             </div>
-        </form>
+        
             
         <div>
-            <button class="next-button" onclick="handleButtonClick()"><b style="color: #ffffff; font-size: 15px;">다음</b></button>
+            <button class="next-button" ><b style="color: #ffffff; font-size: 15px;">다음</b></button>
         </div>
+    </form>
+    
+    
+
     </div>
+    
 
 
     <!-- 모달 창 -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
+    <div id="myModal1" class="modal1">
+        <div class="modal-content1">
             <img class="main-logo" src="{% static 'image/signup-popup2.png' %}">
             <br><br><br>
             <p>MatchZzic은<br>
             여성전용 서비스입니다</p>
-            <button class="close-button" style="font-weight: bold; " onclick="closeModal()">확인</button>
+            <button class="close-button1" style="font-weight: bold; " onclick="closeModal1()">확인</button>
+        </div>
+    </div>
+
+    <div id="myModal2" class="modal2">
+        <div class="modal-content2">
+            <img class="main-logo" src="{% static 'image/signup-popup2.png' %}">
+            <br><br><br>
+            <p>MatchZzic을<br>
+            사용하실 수 있습니다</p>
+            <button class="close-button2" style="font-weight: bold; " onclick="closeModal2()">확인</button>
         </div>
     </div>
 
     <script>
-        var modal = document.getElementById("myModal");
+        var modal1 = document.getElementById("myModal1");
+        var modal2 = document.getElementById("myModal2");
         var closeButton = document.getElementsByClassName("close-button")[0];
 
         // 모달 창 표시
-        function showModal() {
-            modal.style.display = "block";
+        function showModal1() {
+            modal1.style.display = "block";
         }
 
         // 모달 창 닫기
-        function closeModal() {
-            modal.style.display = "none";
+        function closeModal1() {
+            modal1.style.display = "none";
         }
 
         // 페이지 로드 후 모달 창 표시
-        window.onload != showModal;
+        window.onload != showModal1;
+
+
+
+        // 모달 창 표시
+        function showModal2() {
+            modal2.style.display = "block";
+        }
+
+        // 모달 창 닫기
+        function closeModal2() {
+            modal2.style.display = "none";
+        }
+
+        // 페이지 로드 후 모달 창 표시
+        window.onload != showModal2;
 
         // 다음 버튼 클릭 이벤트 처리
         function handleButtonClick() {
             var boxInput4_1 = document.querySelector('.box-input4-1');
             var value = boxInput4_1.value;
             if (value === '9' || value === '1' || value === '3' || value === '5' || value === '7') {
-                showModal();
+                showModal1();
                 return false; // 링크 이동 방지
-            } else {
-                var tempUserId = "{{ temp_user.id }}";  // 템플릿 변수를 사용하여 temp_user_id 가져오기
-                var signup2URL = "{% url 'signup2' temp_user_id=0 %}".replace('0', tempUserId);
+            } else if(value === '2' || value === '4' || value === '6' || value === '8')
+            {   
+                showModal2();
+                
             }
         }
+
     </script>
 </body>
 </html>
