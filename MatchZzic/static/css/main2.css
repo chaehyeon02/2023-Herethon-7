@@ -1,20 +1,22 @@
-body {
+#iphone-frame {
   width: 375px;
   height: 667px;
-  background: #fbfbfb;
+  border-radius: 30px;
+  margin: 50px auto;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
-
 /* 상단로고 */
 .header {
-  display: flex;
+  position: fixed;
+  width: 322px;
+  height: 405px;
+  left: calc(50% - 322px / 2 + 0.5px);
+  top: 4.5%;
 }
 .logo {
   position: absolute;
-  left: 8.27%;
-  right: 59.47%;
-  top: 4.5%;
-  bottom: 91.3%;
-
   font-family: "Inter";
   font-style: normal;
   font-weight: 800;
@@ -35,14 +37,13 @@ body {
 }
 .mypage_move {
   position: absolute;
-  left: 92%;
-  top: 33px;
+  top: 2%;
+  left: 95%;
 }
 iconify-icon {
   width: 22px;
   height: 22px;
 }
-
 /* 메인페이지 */
 
 .main_title {
@@ -54,7 +55,7 @@ iconify-icon {
   position: absolute;
   width: 11.53px;
   left: calc(50% - 11.53px / 2 + 1.5px);
-  top: 13%;
+  top: 10%;
   bottom: 85.16%;
 }
 .main_title .title {

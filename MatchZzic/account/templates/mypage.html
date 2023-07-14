@@ -5,8 +5,252 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/mypage2.css' %}" />
-    <style>
+    <!-- <link rel="stylesheet" href="{% static 'css/mypage2.css' %}" /> -->
+  <style>
+  #iphone-frame {
+  width: 375px;
+  height: 667px;
+  border-radius: 30px;
+  margin: 50px auto;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 상단로고 */
+.header {
+  position: fixed;
+  width: 322px;
+  height: 405px;
+  left: calc(50% - 322px / 2 + 0.5px);
+  top: 4.5%;
+}
+.logo {
+  position: absolute;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 22.799px;
+  line-height: 28px;
+  color: rgba(26, 61, 255, 0.7);
+}
+.username {
+  position: absolute;
+  left: 80%;
+  top: 10px;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(114, 114, 114, 1);
+}
+.mypage_move {
+  position: absolute;
+  top: 2%;
+  left: 95%;
+}
+iconify-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* 마이페이지 타이틀 */
+.mypage_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mypage_title img {
+  position: absolute;
+  width: 12px;
+  left: calc(50% - 11.53px / 2 + 1.5px);
+  bottom: 85.16%;
+}
+
+.mypage_title span {
+  position: absolute;
+  width: 92px;
+  height: 29px;
+  left: calc(50% - 92px / 2 + 0.5px);
+  top: 97px;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+  color: #000000;
+}
+
+/* 마이페이지 유저 */
+
+.mypage_box {
+  display: flex;
+}
+
+.mypage_user {
+  position: absolute;
+  width: 315px;
+  height: 319px;
+  left: calc(50% - 322px / 2 + 0.5px);
+  top: 137px;
+  background: #ffffff;
+  box-shadow: 0px 0px 14.7368px rgba(137, 137, 137, 0.2);
+  border-radius: 16.5789px;
+}
+
+/* 닉네임 */
+.mypage_user_name {
+  position: absolute;
+  height: 23px;
+  left: 18px;
+  top: 20.26px;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16.5789px;
+  line-height: 23px;
+  color: #443c53;
+}
+
+.mypage_user_photo {
+  display: flex;
+  position: absolute;
+  width: 167px;
+  height: 125.73px;
+  left: calc(50% - 167px / 2);
+  top: 38.27px;
+}
+.mypage_user_photo img {
+  width: 167px;
+  height: 125.73;
+}
+.mypage_user_type {
+  position: absolute;
+  width: 270px;
+  box-sizing: border-box;
+  top: 170px;
+  left: calc(50% - 300px / 2);
+  text-align: center;
+}
+
+.mypage_user_type ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  margin: 0;
+}
+.mypage_user_type li {
+  height: max-content;
+  width: max-content;
+  padding: 7px;
+
+  display: flex;
+  justify-content: center;
+  margin: 4px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #1a3dff;
+  border-radius: 20px;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 17px;
+  list-style: none;
+  color: #1a3dff;
+}
+
+input[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 63.55px;
+  height: 24.87px;
+  left: 123px;
+  top: 267px;
+  background: #1a3dff;
+  border-radius: 16.5789px;
+  border: none;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 9.21053px;
+  line-height: 13px;
+  color: #ffffff;
+}
+
+/* 최근 매칭된 동행자 */
+.mypage_recent {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 315px;
+  height: 161px;
+  left: calc(50% - 322px / 2 + 0.5px);
+  top: 480px;
+  background: #ffffff;
+  box-shadow: 0px 0px 14.7368px rgba(137, 137, 137, 0.2);
+  border-radius: 16.5789px;
+}
+
+/* 최근 매칭된 동행자 text */
+.text {
+  position: absolute;
+  height: 23px;
+  left: 18px;
+  top: 15px;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16.5789px;
+  line-height: 23px;
+  color: #443c53;
+}
+
+.mypage_recent_list {
+  position: absolute;
+  top: 45px;
+}
+
+.mypage_recent_list span {
+  position: absolute;
+  top: 90%;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  color: #443c53;
+}
+
+.mypage_recent_list ul {
+  display: flex;
+}
+.mypage_recent_list li {
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+  width: 64px;
+  height: 64px;
+  background: #ffffff;
+  box-shadow: 0px 0px 8.10127px rgba(0, 0, 0, 0.25);
+  list-style: none;
+  border-radius: 50%;
+  align-items: center;
+  text-align: center;
+}
+.mypage_recent_list li img {
+  width: 53.47px;
+  height: 40.51px;
+}
+
       /* 사진바꾸기 버튼 */
       #input-image {
         display: flex;
@@ -27,28 +271,30 @@
         line-height: 13px;
         color: #727272;
       }
-    </style>
+  </style>
   </head>
   <body>
-    <!-- 상단 로고  -->
-    <div class="header">
-      <div class="logo">MatchZzic</div> 
-      <div class="username">{{user_instance.userName}}</div>
-      <div class="mypage_move">
-        <a href="{% url 'mypage' %}">
-          <iconify-icon
-            icon="octicon:feed-person-16"
-            style="color: #5e77fe"
-          ></iconify-icon
-        ></a>
-      </div>
+    <div id="iphone-frame">
+   <!-- 상단 로고  -->
+   <div class="header">
+    <div class="logo">MatchZzic</div>
+    <div class="username">{{user}}</div>
+    <div class="mypage_move">
+      <a href="{% url 'mypage' %}">
+        <iconify-icon
+          icon="octicon:feed-person-16"
+          style="color: #5e77fe"
+        ></iconify-icon
+      ></a>
     </div>
+  </div>  
 
     <!-- 마이페이지 타이틀 -->
     <div class="mypage_title">
       <img src="{% static 'image/Mask group4.png' %}" alt="" />
-      <span>마이페이지</span>
+      <span class="mypage_title_text">마이페이지</span>
     </div>
+    
     <!-- 마이페이지 유저 -->
 
     <div class="mypage_box">
@@ -117,6 +363,7 @@
     </div>
 
     {% comment %} 누르면 텍스트 변환 {% endcomment %}
+  </div>
     <script>
       function change1() {
         const subs = document.getElementById("one");
