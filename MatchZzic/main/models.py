@@ -5,7 +5,7 @@ from account.models import User
 # Create your models here.
 class Post (models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    place = models.TextField('동행할 여행지', max_length=30, default='')
+    travel_to = models.CharField(verbose_name='여행지', max_length=30, null=True)
     
     def __str__(self):
-        return self.place
+        return self.travel_to
