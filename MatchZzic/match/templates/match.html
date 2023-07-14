@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/MatchZzic/match/templates/match.css" />
+    <!-- <link rel="stylesheet" href="/MatchZzic/match/templates/match.css" /> -->
+    <link rel="stylesheet" href="./match.css" />
   </head>
   <body>
     <!-- 상단 로고  -->
@@ -25,9 +26,9 @@
     <div class="matching">
       <div class="outline">
         <div class="username">
-          <img src="/MatchZzic/match/templates/img/Mask group.png" alt="" />
-          <span>김멋사</span>
-          <!--변수로 담아야 함-->
+          <img src="./img/Mask group.png" alt="" />
+          <!-- <span>김멋사</span> -->
+          <span>{{ match_user_name }}</span>
         </div>
         <div class="userphoto">
           <img
@@ -37,10 +38,14 @@
         </div>
         <div class="usertype">
           <ul>
-            <li>계획형</li>
+            <!-- <li>계획형</li>
             <li>사진 찍는 거 싫어요</li>
             <li>바쁘게 움직이는 여행</li>
-            <li>자연, 시골</li>
+            <li>자연, 시골</li> -->
+            <li>{{ ans1 }}</li>
+            <li>{{ ans2 }}</li>
+            <li>{{ ans3 }}</li>
+            <li>{{ ans4 }}</li>
           </ul>
         </div>
       </div>
