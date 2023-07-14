@@ -252,19 +252,18 @@
         <div class="outline">
           <div class="username">
             <img src="{% static 'image/Mask group4.png' %}" alt="" />
-            <span>밍밍이</span>
-            <!--변수로 담아야 함-->
+            <span>{{ user }}</span>
           </div>
-          <div class="user_travel">동행할 여행지</div>
+          <div class="user_travel">{{ match_user_travel }}</div>
           <div class="userphoto">
             <img src="{% static 'image/밍밍이 검정머리2.png'%}" alt="" />
           </div>
           <div class="usertype">
             <ul>
-              <li>계획형</li>
-              <li>사진 찍는 거 싫어요</li>
-              <li>바쁘게 움직이는 여행</li>
-              <li>자연, 시골</li>
+              <li>{{ ans1 }}</li>
+              <li>{{ ans2 }}</li>
+              <li>{{ ans3 }}</li>
+              <li>{{ ans4 }}</li>
             </ul>
           </div>
         </div>
@@ -278,14 +277,19 @@
             <img src="{% static 'image/Mask group2.png' %}" alt="" />
           </div>
         </div>
-        <div class="ok">
+        <!-- <div class="ok">
           <span>ok!</span>
           <a href="/MatchZzic/match/templates/match_done.html">
             {% comment %} url연결 필요 {% endcomment %}
             <div class="okimg">
               <img src="{% static 'image/Mask group4.png' %}" alt="" /></div
           ></a>
-        </div>
+        </div> -->
+        <form action="{% url 'finish' %}" method="get">
+          {% csrf_token %}
+          <input type="hidden" name="match_user" value="{{ match_user }}">
+          <input type="submit" value="finish">
+      </form>
       </div>
     </div>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
