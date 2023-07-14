@@ -34,7 +34,7 @@
       <img src="{% static 'image/여행 아이콘3.png' %}" alt="" />
     </div>
 
-    <form method="POST" action="{% url 'main' %}">
+    <form method="POST" action="{% url 'main_app:main' %}">
       {% csrf_token %}
       <!-- 동행할 여행지 입력란 -->
       <div class="main_input">

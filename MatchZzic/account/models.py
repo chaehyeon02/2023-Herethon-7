@@ -9,7 +9,7 @@ class User(models.Model):
     userRrn1 = models.CharField(max_length=6, null=True)
     userRrn2 = models.CharField(max_length=1, null=True)
     userLink = models.CharField(max_length=2000, null=True)
-
+    
     CHOICE_OPTIONS1 = (
         ('option1', '계획형'),
         ('option2', '즉흥형'),
