@@ -278,7 +278,7 @@ input[type="submit"] {
    <!-- 상단 로고  -->
    <div class="header">
     <div class="logo">MatchZzic</div>
-    <div class="username">{{user}}</div>
+    <div class="username">{{ userName }}</div>
     <div class="mypage_move">
       <a href="{% url 'mypage' %}">
         <iconify-icon
@@ -299,7 +299,7 @@ input[type="submit"] {
 
     <div class="mypage_box">
       <div class="mypage_user">
-        <div class="mypage_user_name">{{user_instance.userName}}</div>
+        <div class="mypage_user_name">{{user}}</div>
 
         <input type="file" id="fileInput" style="display: none" />
         <label
