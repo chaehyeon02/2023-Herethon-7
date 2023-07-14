@@ -3,12 +3,13 @@ from django import forms
 
 # Create your models here.
 class User(models.Model):
-    userName = models.CharField(max_length=32)
-    userId = models.CharField(max_length=32)
-    userPwd = models.CharField(max_length=32)
+    userName = models.CharField(max_length=32, null=True)
+    userId = models.CharField(max_length=32, null=True)
+    userPwd = models.CharField(max_length=32, null=True)
     userRrn1 = models.CharField(max_length=6, null=True)
     userRrn2 = models.CharField(max_length=1, null=True)
-    userLink = models.CharField(max_length=2000)
+    
+    userLink = models.CharField(max_length=2000, null=True)
     travel_to = models.CharField(max_length=30, null=True)
 
     CHOICE_OPTIONS1 = (
@@ -27,10 +28,10 @@ class User(models.Model):
         ('option7', '번화가'),
         ('option8', '자연, 시골'),
     )
-    userType1 = models.CharField(max_length=15, choices=CHOICE_OPTIONS1, default='option1')
-    userType2 = models.CharField(max_length=15, choices=CHOICE_OPTIONS2, default='option3')
-    userType3 = models.CharField(max_length=15, choices=CHOICE_OPTIONS3, default='option5')
-    userType4 = models.CharField(max_length=15, choices=CHOICE_OPTIONS4, default='option7')
+    userType1 = models.CharField(max_length=15, choices=CHOICE_OPTIONS1, default='option1', null=True)
+    userType2 = models.CharField(max_length=15, choices=CHOICE_OPTIONS2, default='option3', null=True)
+    userType3 = models.CharField(max_length=15, choices=CHOICE_OPTIONS3, default='option5', null=True)
+    userType4 = models.CharField(max_length=15, choices=CHOICE_OPTIONS4, default='option7', null=True)
     
     image = models.ImageField(upload_to='images/', null=True, default='images/default_image.png')
 
@@ -43,12 +44,12 @@ class User(models.Model):
         return self.userName
     
 class TempUser(models.Model):
-    userName = models.CharField(max_length=32)
-    userId = models.CharField(max_length=32)
-    userPwd = models.CharField(max_length=32)
+    userName = models.CharField(max_length=32, null=True)
+    userId = models.CharField(max_length=32, null=True)
+    userPwd = models.CharField(max_length=32, null=True)
     userRrn1 = models.CharField(max_length=6, null=True)
     userRrn2 = models.CharField(max_length=1, null=True)
-    userLink = models.CharField(max_length=2000)
+    userLink = models.CharField(max_length=2000, null=True)
     
     class Meta:
         db_table = 'tempUser'

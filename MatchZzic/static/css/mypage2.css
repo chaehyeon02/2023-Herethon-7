@@ -52,7 +52,7 @@ iconify-icon {
 }
 .mypage_title img {
   position: absolute;
-  width: 11.53px;
+  width: 12px;
   left: calc(50% - 11.53px / 2 + 1.5px);
   top: 13%;
   bottom: 85.16%;
@@ -100,25 +100,6 @@ iconify-icon {
   font-size: 16.5789px;
   line-height: 23px;
   color: #443c53;
-}
-.mypage_user_photo_change_btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 63.55px;
-  height: 24.87px;
-  left: 233.03px;
-  top: 20.26px;
-  background: #efefef;
-  border-radius: 16.5789px;
-  border: none;
-  font-family: "Noto Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 9.21053px;
-  line-height: 13px;
-  color: #727272;
 }
 
 .mypage_user_photo {
