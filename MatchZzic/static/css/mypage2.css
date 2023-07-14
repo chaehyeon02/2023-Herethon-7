@@ -54,9 +54,9 @@ iconify-icon {
   position: absolute;
   width: 12px;
   left: calc(50% - 11.53px / 2 + 1.5px);
-  top: 13%;
-  bottom: 85.16%;
+  /* bottom: 85.16%; */
 }
+
 .mypage_title span {
   position: absolute;
   width: 92px;
@@ -71,6 +71,7 @@ iconify-icon {
   text-align: center;
   color: #000000;
 }
+
 /* 마이페이지 유저 */
 
 .mypage_box {
