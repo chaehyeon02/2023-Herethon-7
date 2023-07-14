@@ -262,7 +262,7 @@
             // 다른 수가 입력되었을 때 링크로 연결
             var tempUserId = "{{ temp_user.id }}";  // 템플릿 변수를 사용하여 temp_user_id 가져오기
             var signup2URL = "{% url 'signup2' temp_user_id=0 %}".replace('0', tempUserId);
-            window.location.href = signup2URL;
+           
         }
     }
 </script>
