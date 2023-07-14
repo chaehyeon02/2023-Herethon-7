@@ -56,9 +56,9 @@
             transform: translate(-50%, -50%);
         }
 
-        .start-button {
+        .next-button {
             position: absolute;
-            top: 93%;
+            top: 95%;
             right: 2%;
             transform: translate(-50%, -50%);
             width: 60px;
@@ -211,7 +211,7 @@
             
             
             <div>
-                <button  class="start-button" onclick="handleButtonClick()"><b style="color: #ffffff; font-size: 15px;">다음</b></button>
+                <button  class="next-button" onclick="handleButtonClick()"><b style="color: #ffffff; font-size: 15px;">다음</b></button>
                 </a>
             </div>
         </form>
@@ -222,7 +222,6 @@
 <!-- 모달 창 -->
 <div id="myModal" class="modal">
     <div class="modal-content">
-        {% load static %}
         <img class="main-logo" src="{% static 'image/signup-popup2.png' %}">
         <br><br><br>
         <p>MatchZzic은<br>
@@ -257,12 +256,11 @@
         var value = boxInput4_1.value;
         if (value === '9' || value === '1' || value === '3' || value === '5' || value === '7') {
             showModal();
-            return false; // 링크 이동 방지
+            return false;// 링크 이동 방지
         } else {
             // 다른 수가 입력되었을 때 링크로 연결
             var tempUserId = "{{ temp_user.id }}";  // 템플릿 변수를 사용하여 temp_user_id 가져오기
             var signup2URL = "{% url 'signup2' temp_user_id=0 %}".replace('0', tempUserId);
-           
         }
     }
 </script>
