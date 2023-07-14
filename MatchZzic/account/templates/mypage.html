@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- <link rel="stylesheet" href="{% static 'css/mypage2.css' %}" /> -->
-    <style>
-      #iphone-frame {
+  <style>
+  #iphone-frame {
   width: 375px;
   height: 667px;
   border-radius: 30px;
@@ -37,7 +37,7 @@
 .username {
   position: absolute;
   left: 80%;
-  top: 33px;
+  top: 10px;
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 500;
@@ -271,14 +271,14 @@ input[type="submit"] {
         line-height: 13px;
         color: #727272;
       }
-    </style>
+  </style>
   </head>
   <body>
     <div id="iphone-frame">
    <!-- 상단 로고  -->
    <div class="header">
     <div class="logo">MatchZzic</div>
-    <div class="username"></div>
+    <div class="username">{{user}}</div>
     <div class="mypage_move">
       <a href="{% url 'mypage' %}">
         <iconify-icon
