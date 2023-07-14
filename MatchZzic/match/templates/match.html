@@ -228,6 +228,23 @@
         border-radius: 50%;
         background: #ffffff;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+        background-image: url("{% static 'image/Mask group4.png' %}");
+        background-repeat: no-repeat;
+        border: none;
+        text-align: center;
+        background-size: cover;
+        overflow: hidden;
+        color: #1a3dff;
+      }
+      .okimg img {
+        width: 60px;
+        height: 60px;
+      }
+
+      #finish {
+        border: none;
+        width: 69px;
+        height: 69px;
       }
     </style>
   </head>
@@ -276,6 +293,20 @@
           <div class="noimg">
             <img src="{% static 'image/Mask group2.png' %}" alt="" />
           </div>
+<<<<<<< HEAD
+        </div>
+
+        <form action="{% url 'finish' %}" method="get">
+          {% csrf_token %}
+          <div class="ok">
+            <span>ok!</span>
+            <!-- <div class="okimg"> -->
+            <input type="submit" class="okimg" />
+            <input type="hidden" name="match_user" value="{{ match_user }}" />
+            <!-- </div> -->
+          </div>
+        </form>
+=======
         </div> -->
         <!-- <div class="ok">
           <span>ok!</span>
@@ -295,8 +326,13 @@
           <input type="hidden" name="match_user" value="{{ match_user }}">
           <input type="submit" value="ok">
       </form>
+>>>>>>> upstream/main
       </div>
     </div>
+    <script>
+      var input = document.getElementsByClassName(okimg);
+      input.value = null;
+    </script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   </body>
 </html>

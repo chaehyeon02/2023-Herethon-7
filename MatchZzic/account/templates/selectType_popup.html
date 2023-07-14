@@ -5,284 +5,294 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-            background-color: #ffffff;
-            overflow: hidden;
-        }
+      body {
+          background-color: #ffffff;
+          overflow: hidden;
+      }
 
-            /* popup창 이미지 디자인 */
-            .header-logo {
-            width: 15px;
-            height: 46px;
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+          /* popup창 이미지 디자인 */
+          .header-logo {
+          width: 15px;
+          height: 46px;
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+      }
 
-        /* selectType page */
-        #iphone-frame {
-            width: 375px;
-            height: 667px;
-            background: #FBFBFB;
-            /* border-radius: 30px; */
-            margin: 50px auto;
-            position: relative;
-            justify-content: center;
-            align-items: center;
-        }
+      /* selectType page */
+      #iphone-frame {
+          width: 375px;
+          height: 667px;
+          background: #FBFBFB;
+          /* border-radius: 30px; */
+          margin: 50px auto;
+          position: relative;
+          justify-content: center;
+          align-items: center;
+      }
 
-        /* #iphone-frame:before {
-            content: "";
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 400px;
-            height: 692px;
-            background-color: #000;
-            border-radius: 30px;
-            z-index: -1;
-        } */
+      /* #iphone-frame:before {
+          content: "";
+          position: absolute;
+          top: -12px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 400px;
+          height: 692px;
+          background-color: #000;
+          border-radius: 30px;
+          z-index: -1;
+      } */
 
-        #container-box {
-            width: 375px;
-            height: 667px;
-            background-color: #FBFBFB;
-            border-radius: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+      #container-box {
+          width: 375px;
+          height: 667px;
+          background-color: #FBFBFB;
+          border-radius: 50px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+      }
 
-        .main-logo {
-            width: 319px;
-            height: 28px;
-            position: absolute;
-            top: 7%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+      .main-logo {
+          width: 319px;
+          height: 28px;
+          position: absolute;
+          top: 7%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+      }
 
-        .button {
-            width: 140px;
-            height: 45px;
-            border-radius: 50px;
-            border-color: #2547FD;
-            margin-bottom: 10px;
-            background-color: #ffffff;
-            color: #2547FD;
-            transition: background-color 0.3s, color 0.3s;
-        }
+      .button {
+          width: 140px;
+          height: 45px;
+          border-radius: 50px;
+          border-color: #2547FD;
+          margin-bottom: 10px;
+          background-color: #ffffff;
+          color: #2547FD;
+          transition: background-color 0.3s, color 0.3s;
+      }
 
-        .button:hover,
-        .button:focus {
-            background-color: #1A3DFF;
-            color: #ffffff;
-        }
+      .button:hover,
+      .button:focus {
+          background-color: #1A3DFF;
+          color: #ffffff;
+      }
 
-        .title {
-            top: 5px;
-            font-weight: bold;
-            text-align: center;
-            font-size: 20px;
-            position: relative;
-            transform: translateY(-50%);
-        }
+      .title {
+          top: 5px;
+          font-weight: bold;
+          text-align: center;
+          font-size: 20px;
+          position: relative;
+          transform: translateY(-50%);
+      }
 
-        .type {
-            font-weight: bold;
-            text-align: center;
-            font-size: 17px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
+      .type {
+          font-weight: bold;
+          text-align: center;
+          font-size: 17px;
+          margin-bottom: 20px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
 
-        .shadowed-box {
-            width: 320px;
-            height: 469px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
-            transform: translateY(10%);
-           
-        }
-
-        .button1{
-        position: absolute;
-        top: 25%;
-        left: 39%;
-        width: 70px;
-        height: 45px;
-        border-radius: 50px;
-        border-color: #2547FD;
-        margin: -40px;
-    }
-
-    .button2{
-        position: absolute;
-        top: 25%;
-        right: 39%;
-        width: 70px;
-        height: 45px;
-        border-radius: 50px;
-        border-color: #2547FD;
-        margin: -40px;
-    }
-
-    .button3{
-        position: absolute;
-        top: 40%;
-        left: 17%;
-        width: 130px;
-        height: 45px;
-        border-radius: 50px;
-        border-color: #2547FD;
-        margin: -30px;
-    }
-
-    .button4{
-        position: absolute;
-        top: 40%;
-        right: 17%;
-        width: 130px;
-        height: 45px;
-        border-radius: 50px;
-        border-color: #2547FD;
-        margin: -30px;
-    }
-
-    .button5{
-        position: absolute;
-        top: 55%;
-        left: 18%;
-        width: 120px;
-        height: 45px;
-        border-radius: 50px;
-        border-color: #2547FD;
-        margin: -20px;
-    }
-
-    .button6{
-        position: absolute;
-        top: 55%;
-        right: 18%;
-        width: 120px;
-        height: 45px;
-        border-radius: 50px;
-        border-color: #2547FD;
-        margin: -20px;
-    }
-
-    .button7{
-        position: absolute;
-        top: 70%;
-        left: 24%;
-        width: 90px;
-        height: 45px;
-        border-radius: 50px;
-        border-color: #2547FD;
-        margin: -10px;
-    }
-
-    .button8{
-        position: absolute;
-        top: 70%;
-        right: 24%;
-        width: 90px;
-        height: 45px;
-        border-radius: 50px;
-        border-color: #2547FD;
-        margin: -10px;
-    }
-
-    .finish-button{
-        position: absolute;
-        top: 88%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 170px;
-        height: 45px;
-        border-radius: 50px;
-        border: none;
-        color:#ffffff;
-        background-color: #2547FD;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
-    }
-
-    .title {
-        font-weight: bold;
-        text-align: center;
-        font-size: 20px;
-        transform: translateY(-30%);
-        }
+      .shadowed-box {
+          width: 320px;
+          height: 469px;
+          background-color: #ffffff;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+          transform: translateY(10%);
+         
+      }
 
 
-    .type{
-        font-weight: bold;
-        text-align: center;
-        font-size: 17px;
-        transform: translateY(-820%);
-    }
+      .button1{
+      position: absolute;
+      font-weight: bold;
+      top: 25%;
+      left: 39%;
+      width: 70px;
+      height: 45px;
+      border-radius: 50px;
+      border-color: #2547FD;
+      margin: -40px;
+      
+  }
 
-    /* 모달 창 스타일 */
-    .modal {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            display: none; 
-            position: fixed;
-            z-index: 1;
-            left: 580px;
-            top: 51px;
-            width: 375px;
-            height: 667px;
-            overflow: auto;
-            background-color: rgba(82, 82, 82, 0.4);
-            
-        }
+  .button2{
+      position: absolute;
+      font-weight: bold;
+      top: 25%;
+      right: 39%;
+      width: 70px;
+      height: 45px;
+      border-radius: 50px;
+      border-color: #2547FD;
+      margin: -40px;
+  }
 
-        .modal-content{
-            background-color: #2547FD;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 220px;
-            height: 153px;
-            border-radius: 24px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            transform: translateY(75%);
-            font-weight: bold;
-        }
+  .button3{
+      position: absolute;
+      font-weight: bold;
+      top: 40%;
+      left: 13%;
+      width: 145px;
+      height: 45px;
+      border-radius: 50px;
+      border-color: #2547FD;
+      margin: -30px;
+  }
 
-        .modal-content p {
-            margin: 0;
-            padding: 10px;
-            color: #ffffff;
-        }
+  .button4{
+      position: absolute;
+      font-weight: bold;
+      top: 40%;
+      right: 13%;
+      width: 145px;
+      height: 45px;
+      border-radius: 50px;
+      border-color: #2547FD;
+      margin: -30px;
+  }
 
-        .close-button {
-            background-color: #ffffff;
-            color: #2547FD;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 11px;
-            cursor: pointer;
-            font-size: 14px;
-        }
+  .button5{
+      position: absolute;
+      font-weight: bold;
+      top: 55%;
+      left: 14.5%;
+      width: 130px;
+      height: 45px;
+      border-radius: 50px;
+      border-color: #2547FD;
+      margin: -20px;
+  }
 
-        .close-button:hover {
-            background-color: #ffffff;
-        }
+  .button6{
+      position: absolute;
+      font-weight: bold;
+      top: 55%;
+      right: 14.5%;
+      width: 130px;
+      height: 45px;
+      border-radius: 50px;
+      border-color: #2547FD;
+      margin: -20px;
+  }
+
+  .button7{
+      position: absolute;
+      font-weight: bold;
+      top: 70%;
+      left: 24%;
+      width: 90px;
+      height: 45px;
+      border-radius: 50px;
+      border-color: #2547FD;
+      margin: -10px;
+  }
+
+  .button8{
+      position: absolute;
+      font-weight: bold;
+      top: 70%;
+      right: 24%;
+      width: 90px;
+      height: 45px;
+      border-radius: 50px;
+      border-color: #2547FD;
+      margin: -10px;
+  }
+
+  .finish-button{
+      position: absolute;
+      top: 88%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 170px;
+      height: 45px;
+      border-radius: 50px;
+      border: none;
+      color:#ffffff;
+      background-color: #2547FD;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  .title {
+      font-weight: bold;
+      text-align: center;
+      font-size: 20px;
+      transform: translateY(-30%);
+      }
 
 
-    </style>
+  .type{
+      font-weight: bold;
+      text-align: center;
+      font-size: 17px;
+      transform: translateY(-820%);
+  }
+
+  /* 모달 창 스타일 */
+  .modal {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: none; 
+          position: fixed;
+          z-index: 1;
+          left: 580px;
+          top: 51px;
+          width: 375px;
+          height: 667px;
+          overflow: auto;
+          background-color: rgba(82, 82, 82, 0.4);
+          
+      }
+
+      .modal-content{
+          background-color: #2547FD;
+          margin: 15% auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 220px;
+          height: 153px;
+          border-radius: 24px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          text-align: center;
+          transform: translateY(75%);
+          font-weight: bold;
+      }
+
+      .modal-content p {
+          margin: 0;
+          padding: 10px;
+          color: #ffffff;
+      }
+
+      .close-button {
+          background-color: #ffffff;
+          color: #2547FD;
+          padding: 8px 16px;
+          border: none;
+          border-radius: 11px;
+          cursor: pointer;
+          font-size: 14px;
+      }
+
+      .close-button:hover {
+          background-color: #ffffff;
+      }
+
+
+  </style>
 </head>
 <body>
     <div id="iphone-frame">
@@ -295,14 +305,14 @@
               <form method="post">
                   {% csrf_token %}
                   <div>
-                      <button class="button button1" name="userType1" onclick="changeButtonColor(this)"><b style="font-size: 10px;">계획형</b></button>
-                      <button class="button button2" name="userType1" onclick="changeButtonColor(this)"><b style="font-size: 10px;">즉흥형</b></button>
-                      <button class="button button3" name="userType2" onclick="changeButtonColor(this)"><b style="font-size: 10px;">바쁘게 움직이는 여행</b></button>
-                      <button class="button button4" name="userType2" onclick="changeButtonColor(this)"><b style="font-size: 10px;">오직 휴식을 위한 여행</b></button>
-                      <button class="button button5" name="userType3" onclick="changeButtonColor(this)"><b style="font-size: 10px;">사진찍는 거 좋아요</b></button>
-                      <button class="button button6" name="userType3" onclick="changeButtonColor(this)"><b style="font-size: 10px;">사진 찍는 거 싫어요</b></button>
-                      <button class="button button7" name="userType4" onclick="changeButtonColor(this)"><b style="font-size: 10px;">번화가</b></button>
-                      <button class="button button8" name="userType4" onclick="changeButtonColor(this)"><b style="font-size: 10px;">자연, 시골</b></button>
+                    <input type="button" class="button button1" name="userType1" value="계획형" onclick="changeButtonColor(this)">
+                    <input type="button" class="button button2" name="userType1" value="즉흥형" onclick="changeButtonColor(this)">
+                    <input type="button" class="button button3" name="userType2" value="바쁘게 움직이는 여행" onclick="changeButtonColor(this)">
+                    <input type="button" class="button button4" name="userType2" value="오직 휴식을 위한 여행" onclick="changeButtonColor(this)">
+                    <input type="button" class="button button5" name="userType3" value="사진찍는 거 좋아요" onclick="changeButtonColor(this)">
+                    <input type="button" class="button button6" name="userType3" value="사진 찍는 거 싫어요" onclick="changeButtonColor(this)">
+                    <input type="button" class="button button7" name="userType4" value="번화가" onclick="changeButtonColor(this)">
+                    <input type="button" class="button button8" name="userType4" value="자연, 시골" onclick="changeButtonColor(this)">
                   </div>
                   <input type="hidden" name="temp_user_id" value="{{ temp_user_id }}">
                   <button type="submit" class="finish-button"><b style="font-size: 20px;">완료하기</b></button>

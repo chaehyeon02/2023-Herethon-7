@@ -7,9 +7,9 @@ def main(request):
     if request.method == 'POST':
         # 여행지 저장
         place = request.POST.get('place')
-        user = request.session['user'] # 세션에서 user 가져옴
+        user = request.session.get('user') # 세션에서 user 가져옴
         User.objects.filter(userId=user).update(travel_to=place)
-        return redirect('match')
+        return render(request, 'match.html', {'user' : user})
     else:
         return render(request, 'main.html')
 

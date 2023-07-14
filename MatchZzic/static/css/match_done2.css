@@ -83,6 +83,12 @@ iconify-icon {
   box-shadow: 0px 0px 5px rgba(137, 137, 137, 0.3);
   border-radius: 18px;
 }
+
+.username {
+  position: absolute;
+  left: 50%;
+  top: 3.5%;
+}
 .username img {
   position: absolute;
   width: 11.53px;
