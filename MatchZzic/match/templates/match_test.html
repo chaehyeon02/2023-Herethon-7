@@ -7,16 +7,19 @@
 </head>
 <body>
     <h1>매칭 데이터</h1>
-    <p>이름: {{ match_user_name }}</p>
+    <!-- <p>이름: {{ match_user_name }}</p>
     <p>조건1: {{ ans1 }}</p>
     <p>조건2: {{ ans2 }}</p>
     <p>조건3: {{ ans3 }}</p>
     <p>조건4: {{ ans4 }}</p>
-    <p>{{ match_user }}</p>
-    <!-- <form action="{% url 'finish' %}" method="post">
-        {% csrf_token %}
-        <input type="submit" value="ok">
-    </form> -->
+    <p>{{ match_user }}</p> -->
+
+    <p>test user: {{ user }}</p>
+    <p>2: {{ match_user2 }}</p>
+    <p>match2의 옵션1: {{ match_user2_type1 }}</p>
+    <p>match2의 옵션2: {{ match_user2_type2 }}</p>
+    <p>match2의 옵션3: {{ match_user2_type3 }}</p>
+    <p>match2의 옵션4: {{ match_user2_type4 }}</p>
 
     <form action="{% url 'finish' %}" method="get">
         {% csrf_token %}
