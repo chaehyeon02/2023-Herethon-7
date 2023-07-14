@@ -232,6 +232,13 @@
         background-repeat: no-repeat;
         border: none;
         text-align: center;
+        background-size: cover;
+        overflow: hidden;
+        color: #1a3dff;
+      }
+      .okimg img {
+        width: 60px;
+        height: 60px;
       }
 
       #finish {
@@ -293,13 +300,17 @@
           <div class="ok">
             <span>ok!</span>
             <!-- <div class="okimg"> -->
-            <input type="submit" class="okimg" value="null" />
+            <input type="submit" class="okimg" />
             <input type="hidden" name="match_user" value="{{ match_user }}" />
             <!-- </div> -->
           </div>
         </form>
       </div>
     </div>
+    <script>
+      var input = document.getElementsByClassName(okimg);
+      input.value = null;
+    </script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   </body>
 </html>
