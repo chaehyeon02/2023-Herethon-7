@@ -6,10 +6,9 @@ from .models import User
 def main(request):
     if request.method == 'POST':
         # 여행지 저장
-        place = request.POST.get('place', None)
-        temp_user_id = request.session.get('temp_user_id')  # 세션에서 temp_user_id 가져옴
-        post = User(travel_to=place, userId=temp_user_id)
-        post.save()
+        place = request.POST.get('place')
+        user = request.session['user'] # 세션에서 user 가져옴
+        User.objects.filter(userId=user).update(travel_to=place)
         return redirect('match')
     else:
         return render(request, 'main.html')
