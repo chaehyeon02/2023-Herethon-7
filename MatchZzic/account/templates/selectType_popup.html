@@ -290,21 +290,23 @@
             <img class="main-logo" src="{% static 'image/header-logo2.png' %}">
             <div class="title">회원가입</div>
             <div class="shadowed-box">
-                <div class="type" >당신의 여행 타입을 클릭해주세요</div>
-                
-                <div>
-                    <button class="button button1" onclick="changeButtonColor(this)"><b style="font-size: 10px;">계획형</b></button>
-                    <button class="button button2" onclick="changeButtonColor(this)"><b style="font-size: 10px;">즉흥형</b></button>
-                    <button class="button button3" onclick="changeButtonColor(this)"><b style="font-size: 10px;">바쁘게 움직이는 여행</b></button>
-                    <button class="button button4" onclick="changeButtonColor(this)"><b style="font-size: 10px;">오직 휴식을 위한 여행</b></button>
-                    <button class="button button5" onclick="changeButtonColor(this)"><b style="font-size: 10px;">사진찍는 거 좋아요</b></button>
-                    <button class="button button6" onclick="changeButtonColor(this)"><b style="font-size: 10px;">사진 찍는 거 싫어요</b></button>
-                    <button class="button button7" onclick="changeButtonColor(this)"><b style="font-size: 10px;">번화가</b></button>
-                    <button class="button button8" onclick="changeButtonColor(this)"><b style="font-size: 10px;">자연, 시골</b></button>
-                </div>
- 
-                <button  class="finish-button"><b style="font-size: 20px;">완료하기</b></button>
-              
+              <div class="type" >당신의 여행 타입을 클릭해주세요</div>
+
+              <form method="post">
+                  {% csrf_token %}
+                  <div>
+                      <button class="button button1" name="userType1" onclick="changeButtonColor(this)"><b style="font-size: 10px;">계획형</b></button>
+                      <button class="button button2" name="userType1" onclick="changeButtonColor(this)"><b style="font-size: 10px;">즉흥형</b></button>
+                      <button class="button button3" name="userType2" onclick="changeButtonColor(this)"><b style="font-size: 10px;">바쁘게 움직이는 여행</b></button>
+                      <button class="button button4" name="userType2" onclick="changeButtonColor(this)"><b style="font-size: 10px;">오직 휴식을 위한 여행</b></button>
+                      <button class="button button5" name="userType3" onclick="changeButtonColor(this)"><b style="font-size: 10px;">사진찍는 거 좋아요</b></button>
+                      <button class="button button6" name="userType3" onclick="changeButtonColor(this)"><b style="font-size: 10px;">사진 찍는 거 싫어요</b></button>
+                      <button class="button button7" name="userType4" onclick="changeButtonColor(this)"><b style="font-size: 10px;">번화가</b></button>
+                      <button class="button button8" name="userType4" onclick="changeButtonColor(this)"><b style="font-size: 10px;">자연, 시골</b></button>
+                  </div>
+                  <input type="hidden" name="temp_user_id" value="{{ temp_user_id }}">
+                  <button type="submit" class="finish-button"><b style="font-size: 20px;">완료하기</b></button>
+              </from>
         </div>
                     <!-- 모달 창 -->
                     <div id="myModal" class="modal">
