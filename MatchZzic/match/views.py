@@ -46,13 +46,13 @@ def match(request):
 
     return render(request, 'match.html', 
                 {
-                'user': user, #temp
-                'match_user2': match_user_name[0],
+                'user': user,
+                'match_user': match_user_name[0],
                 'ans1': ans1,
                 'ans2': ans2,
                 'ans3': ans3,
                 'ans4': ans4,
-                'match_user_travel': match_user_travel[0], })
+                'match_user_travel': match_user_travel, })
 
 # match_finish
 def done(request):
@@ -63,19 +63,21 @@ def done(request):
 
     user_info = User.objects.filter(
         userId = user
-    ).values('travel_to')
+    ).values('userName', 'travel_to')
     
+    user_name = [user['userName'] for user in user_info]
     user_travel_to = [user['travel_to'] for user in user_info]
 
     # 매칭된 유저의 정보 받아오기
     match_user_info = User.objects.filter(
         userName = match_user
-    ).values('userType1', 'userType2', 'userType3', 'userType4')
+    ).values('userType1', 'userType2', 'userType3', 'userType4', 'userLink')
     
     match_user_type1 = [user['userType1'] for user in match_user_info]
     match_user_type2 = [user['userType2'] for user in match_user_info]
     match_user_type3 = [user['userType3'] for user in match_user_info]
     match_user_type4 = [user['userType4'] for user in match_user_info]
+    match_user_link = [user['userLink'] for user in match_user_info]
 
     if match_user_type1[0] == 'option1':
         ans1 = '계획형'
@@ -98,13 +100,14 @@ def done(request):
         ans4 = '자연, 시골'
 
     contents = {
-        'user_name': user,
+        'user_name': user_name[0],
         'user_travel_to': user_travel_to[0],
         'match_user_name': match_user,
         'ans1': ans1,
         'ans2': ans2,
         'ans3': ans3,
         'ans4': ans4,
+        'match_user_link': match_user_link[0],
     }
 
     return render(request, 'match_done.html', contents)
