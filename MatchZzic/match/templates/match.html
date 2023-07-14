@@ -228,6 +228,16 @@
         border-radius: 50%;
         background: #ffffff;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+        background-image: url("{% static 'image/Mask group4.png' %}");
+        background-repeat: no-repeat;
+        border: none;
+        text-align: center;
+      }
+
+      #finish {
+        border: none;
+        width: 69px;
+        height: 69px;
       }
     </style>
   </head>
@@ -277,19 +287,17 @@
             <img src="{% static 'image/Mask group2.png' %}" alt="" />
           </div>
         </div>
-        <!-- <div class="ok">
-          <span>ok!</span>
-          <a href="/MatchZzic/match/templates/match_done.html">
-            {% comment %} url연결 필요 {% endcomment %}
-            <div class="okimg">
-              <img src="{% static 'image/Mask group4.png' %}" alt="" /></div
-          ></a>
-        </div> -->
+
         <form action="{% url 'finish' %}" method="get">
           {% csrf_token %}
-          <input type="hidden" name="match_user" value="{{ match_user }}">
-          <input type="submit" value="finish">
-      </form>
+          <div class="ok">
+            <span>ok!</span>
+            <!-- <div class="okimg"> -->
+            <input type="submit" class="okimg" value="null" />
+            <input type="hidden" name="match_user" value="{{ match_user }}" />
+            <!-- </div> -->
+          </div>
+        </form>
       </div>
     </div>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
