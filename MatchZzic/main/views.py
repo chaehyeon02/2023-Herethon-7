@@ -1,26 +1,18 @@
-from django.shortcuts import redirect, render
-from .models import Post
-from account.models import User
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from .models import Post,User
 from .forms import PostForm
 
+@login_required
 def main(request):
-    # 해당 user에 여행지 저장
-    # user_id = request.session.get('user')
-    # user = User.objects.get(userId=user_id)
-    
-    # 여행지 저장
     if request.method == 'POST':
-        place = PostForm(request.POST)
-        if place.is_valid():
-            data = place.save(commit=False)
-            #data.user = user
-            data.place = request.POST.get('placeName')
-            data.save()
-            return redirect('main')
+        place = request.POST['place']
+        post = Post(place=place, user=request.user)
+        post.save()
+        return redirect('match')
     else:
-        place = PostForm()
-    return render(request, 'main.html', {'place':place})
-
+        form = PostForm()
+    return render(request, 'main.html', {'form': form})
 
 def match(request):
     return render(request, 'match.html')
