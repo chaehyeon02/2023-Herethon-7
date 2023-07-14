@@ -7,7 +7,10 @@ from .forms import PostForm
 def main(request):
     if request.method == 'POST':
         place = request.POST['place']
-        post = Post(place=place, user=request.user)
+        post = Post(travel_to=place, user=request.user)
+        
+        # 동일한 여행지 필터링
+        Post.objects.filter(place__exact=request.POST.get('place'))
         post.save()
         return redirect('match')
     else:
