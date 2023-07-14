@@ -246,7 +246,7 @@
       <!-- 상단 로고  -->
       <div class="header">
         <div class="logo">MatchZzic</div>
-        <div class="username"></div>
+        <div class="username">{{ user }}</div>
         <div class="mypage_move">
           <a href="{% url 'mypage' %}">
             <iconify-icon
@@ -274,6 +274,7 @@
               <li>{{ ans2 }}</li>
               <li>{{ ans3 }}</li>
               <li>{{ ans4 }}</li>
+              <li>{{ match_user_link }}</li>
             </ul>
           </div>
         </div>
