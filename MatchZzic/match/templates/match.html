@@ -271,12 +271,12 @@
       <!-- 수락, 거절 -->
 
       <div class="okno">
-        <div class="no">
+        <!-- <div class="no">
           <span>no!</span>
           <div class="noimg">
             <img src="{% static 'image/Mask group2.png' %}" alt="" />
           </div>
-        </div>
+        </div> -->
         <!-- <div class="ok">
           <span>ok!</span>
           <a href="/MatchZzic/match/templates/match_done.html">
@@ -285,10 +285,15 @@
               <img src="{% static 'image/Mask group4.png' %}" alt="" /></div
           ></a>
         </div> -->
+        <form action="{% url 'match' %}" method="get">
+          {% csrf_token %}
+          <input type="hidden" name="match_user" value="{{ match_user }}">
+          <input type="submit" value="no">
+      </form>
         <form action="{% url 'finish' %}" method="get">
           {% csrf_token %}
           <input type="hidden" name="match_user" value="{{ match_user }}">
-          <input type="submit" value="finish">
+          <input type="submit" value="ok">
       </form>
       </div>
     </div>
