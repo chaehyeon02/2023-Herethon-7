@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,7 +99,7 @@
 <body>
     <div id="iphone-frame">
         <div>
-            <img class="login-icon" src="image/login-icon.png">
+            <img class="login-icon" src="{% static 'image/login-icon2.png' %}">
         </div>
         <form method="POST" action="{% url 'login' %}">
             {% csrf_token %}
