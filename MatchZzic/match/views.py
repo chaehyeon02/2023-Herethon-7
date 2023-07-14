@@ -54,7 +54,7 @@ def match(request):
         ans4 = '자연, 시골'
 
     request.session['match_user_name'] = match_user_name[0]
-    return render(request, 'match_test.html', 
+    return render(request, 'match.html', 
                 {'match_user_name': match_user_name[0], 'ans1': ans1, 'ans2': ans2, 'ans3': ans3, 'ans4': ans4 })
 
 # match_finish
